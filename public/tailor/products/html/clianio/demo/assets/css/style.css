@@ -233,14 +233,74 @@ p {
 
 @media only screen and (min-width: 1250px) {
     .container {
-        max-width: 1250px
+        max-width: 1250px;
+        /* padding-top: 75px; */
+    }
+}
+
+@media (min-width: 1310px) {
+    .container-fluid.px-0 {
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+        padding-bottom: 25px;
+    }
+
+    .container-fluid.px-0 .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important
+    }
+}
+
+@media (max-width: 1305px) {
+    .container-fluid.px-0 {
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+        padding-bottom: 25px;
+    }
+
+    .container-fluid.px-0 .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important
+    }
+}
+
+@media (max-width: 990px) {
+    .container-fluid.px-0 {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        padding-bottom: 25px;
+    }
+
+    .container-fluid.px-0 .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important
+    }
+}
+
+@media (max-width: 580px) {
+    .container-fluid.px-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-bottom: 25px;
+    }
+
+    .container-fluid.px-0 .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important
+    }
+    
+    .heading4 a{
+        font-size: 14px;
+        font-weight: 100;
+        
     }
 }
 
 @media only screen and (max-width: 1600px) {
     .container-fluid.px-0 {
-        padding-left: 15px !important;
-        padding-right: 15px !important
+        /* padding-left: 100px !important;
+        padding-right: 100px !important; */
+        padding-bottom: 25px;
     }
 
     .container-fluid.px-0 .row {
@@ -5810,7 +5870,7 @@ header .nice-select li {
 
 @media (min-width: 1199px) {
     .vs-cta-layout1 .cta-button .vs-btn {
-        width: 180px;
+        width: 220px;
         text-align: left;
         padding-top: 0;
         padding-bottom: 0;
@@ -5863,9 +5923,9 @@ header .nice-select li {
 
     .vs-cta-layout1 .cta-button .vs-btn {
         display: block;
-        max-width: 180px;
+        max-width: 200px;
         margin-left: auto;
-        margin-right: auto !important
+        margin-right: auto !important;
     }
 }
 
@@ -6774,8 +6834,8 @@ header .nice-select li {
     width: 100%;
     padding: 20px;
     z-index: 3;
-    opacity: 0;
-    visibility: hidden
+    opacity: 1;
+    /* visibility: hidden */
 }
 
 .projects-box-layout1 .project-content a:hover {
@@ -6785,9 +6845,9 @@ header .nice-select li {
 .projects-box-layout1 .project-content h3,
 .projects-box-layout1 .project-content p {
     position: relative;
-    top: 20px;
-    opacity: 0;
-    visibility: hidden
+    /* top: 20px; */
+    opacity: 1;
+    /* visibility: hidden */
 }
 
 .projects-box-layout1 .vs-project {
@@ -6822,7 +6882,7 @@ header .nice-select li {
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s
 }
-
+/* /////////////////////////////////////////////////////////////////////////// */
 .projects-box-layout1 .vs-project:hover .project-content {
     /*    left: 30px;*/
     opacity: 1;
@@ -6892,8 +6952,8 @@ header .nice-select li {
 */
 
 .projects-box-layout1 .container-fluid .slick-arrow {
-    left: 95px;
-    background-color: #ffff
+    left: -70px;
+    background-color: rgba(17, 180, 245, 0.3)
 }
 
 .projects-box-layout1 .container-fluid .slick-arrow:hover {
@@ -6902,14 +6962,15 @@ header .nice-select li {
 
 .projects-box-layout1 .container-fluid .slick-arrow.slick-next {
     left: auto;
-    right: 95px
+    right: -70px
 }
-
+/* 
 @media (max-width: 1500px) {
     .projects-box-layout1 .vs-project .project-content {
         padding: 25px
     }
-}
+} */
+
 
 @media (max-width: 1199px) {
     .projects-box-layout1 .icon-3x {
@@ -6965,7 +7026,7 @@ header .nice-select li {
 
     .projects-box-layout1 .project-content {
         width: 90%;
-        padding: 15px
+        padding: 10px 0px 10px 12px;
     }
 
     .projects-box-layout1 .vs-project .icon {
@@ -8775,8 +8836,8 @@ header .nice-select li {
 }
 
 .vs-team-layout2 .member-content {
-    padding-top: 55px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    /* padding-bottom: 30px; */
     position: relative;
     border-bottom: 3px solid
 }
@@ -8835,7 +8896,7 @@ header .nice-select li {
     }
 
     .vs-team-layout2 .member-content {
-        padding-top: 35px
+        padding: 10px 0;
     }
 }
 

@@ -37,19 +37,7 @@
 </head>
 
 <body>
-    <!--
-    <div class="preloader bg-primary3">
-        <div class="loader-inner">
-            <div class="loader-logo"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/logo.png" alt="Clianio"></div>
-            <div class="loader">
-                <div class="line bg-primary"></div>
-                <div class="line bg-primary2"></div>
-                <div class="line bg-primary"></div>
-                <div class="line bg-primary2"></div>
-            </div>
-        </div><button class="loader-btn preloaderCls">Cancel Preloader</button>
-    </div>
--->
+    
     <!--********************************************* HEADER-START *****************************************-->
 
     <div class="popup-search-box d-none d-lg-block"><button class="searchClose"><i class="fal fa-times"></i></button>
@@ -90,13 +78,8 @@
         <div class="header-menu-wrap">
             <div class="container position-relative">
                 <div class="row">
-                    <div class="col-lg-2 col-lg-3 col-xl-2">
-                        <div class="header-menu-left select-btn"><select name="siteLanguage" id="siteLanguage" class="select-btn radius-50">
-                                <option value="english">English</option>
-                                <option value="French">French</option>
-                                <option value="Germany">Germany</option>
-                            </select></div>
-                    </div>
+                    
+                    
                     <div class="col-md-12 col-lg-7 col-xl-8 position-static">
                         <nav class="main-menu menu-style1 text-center mobile-menu-active onepage-nav">
                             <ul>
@@ -106,19 +89,22 @@
                                 <li><a href="#service">Service</a></li>
                                 <li><a href="#process">Process</a></li>
                                 <li><a href="#project">Project</a></li>
-                                <li><a href="#blog">Blog</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <% if (!isAuthenticated) { %>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/signup">Sign-up</a></li>
+                                
+                                <% } %>
                             </ul>
                         </nav><button class="vs-menu-toggle d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
                     </div>
-                    <div class="col-lg-2 align-self-center">
+                    <!-- <div class="col-lg-2 align-self-center">
                         <div class="header-button text-right d-none d-lg-block">
                             <ul>
                                 <li><a href="#" class="searchBoxTggler"><i class="far fa-search"></i></a></li>
                                 <li><a href="#" class="sideMenuToggler"><i class="far fa-bars"></i></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -128,37 +114,47 @@
     <!--********************************************* SLIDER-START *****************************************-->
 
     <section class="vs-hero-wrapper vs-hero-layout1">
-        <div class="vs-hero-carousel" data-height="900" data-navbuttons="true" data-navbuttons-color="white">
-            <div class="hero-slide ls-slide" data-ls="duration: 7000; transition2d: 4;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/slide-img-1-1.jpg" alt="Slide Image" class="ls-bg">
-                <div class="hero-video-btn ls-l" style="left: 50px; top: 215px; width: 85px; height: 85px; line-height: 85px; font-size: 24px;" data-ls="offsetyin: -70; durationin: 1000; delayin: 300; easingin:easeOutQuint; offsetyout: -50; durationout:
-        1000; "></div>
-                <p class="ls-l sub-title" style="left: 50px; top: 340px; width: 500px; white-space: normal; font-size: 20px; line-height: 30px; color: #ffffff; font-style: italic; font-weight: 500; margin-bottom: 0;" data-ls="offsetyin: -50; durationin: 1000; delayin: 400; easingin:easeOutQuint; offsetyout: -50; durationout: 1000;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/line-1.png" alt="Line Image">Professional Maintenance Services</p>
-                <h1 class="title ls-l" style="left: 50px; top: 380px; width: 700px; line-height: 70px; font-size: 60px; font-weight: 700; color: #fff; white-space: normal; margin-bottom: 0;" data-ls="offsetxin: -200; durationin: 1000; delayin: 600; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">One stop commercial cleaning Company</h1>
-                <p class="text ls-l" style="left: 50px; top: 545px; width: 635px; white-space: normal; margin-bottom: 0; color: #fff; font-weight: 500; font-size: 18px; line-height: 28px;" data-ls="offsetxin: -100; durationin: 1000; delayin: 700; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">Rapidiously deliver equity invested web-readiness rather than B2C human capital. Progressively evisculate global customer service.</p>
-                <div class="hero-btn ls-l" style="top: 637px; left: 50px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
-        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/about.html" class="vs-btn style1">Explore Products<i class="far fa-angle-right"></i></a></div>
+        <div class="vs-hero-carousel" data-height="600" data-navbuttons="true" data-navbuttons-color="white">
+            <div class="hero-slide ls-slide" data-ls="duration: 7000; transition2d: 4;">
+                <img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/6.jpg" alt="Slide Image" class="ls-bg">
+                <div class="hero-video-btn ls-l" style="left: 50px; top: 15px; width: 85px; height: 85px; line-height: 85px; font-size: 24px;" data-ls="offsetyin: -70; durationin: 1000; delayin: 300; easingin:easeOutQuint; offsetyout: -50; durationout: 1000; ">
+                </div>
+                <p class="ls-l sub-title" style="left: 50px; top: 140px; width: 500px; white-space: normal; font-size: 20px; line-height: 30px; color: #ffffff; font-style: italic; font-weight: 500; margin-bottom: 0;" data-ls="offsetyin: -50; durationin: 1000; delayin: 400; easingin:easeOutQuint; offsetyout: -50; durationout: 1000;">
+                    <img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/line-1.png" alt="Line Image">Save Your Time
+                </p>
+                <h1 class="title ls-l" style="left: 50px; top: 180px; width: 700px; line-height: 70px; font-size: 60px; font-weight: 700; color: #fff; white-space: normal; margin-bottom: 0;" data-ls="offsetxin: -200; durationin: 1000; delayin: 600; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">Faster and Efficiently Stitching.</h1>
+                <p class="text ls-l" style="left: 50px; top: 345px; width: 635px; white-space: normal; margin-bottom: 0; color: #fff; font-weight: 500; font-size: 18px; line-height: 28px;" data-ls="offsetxin: -100; durationin: 1000; delayin: 700; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">Rapidiously deliver equity invested web-readiness rather than B2C human capital. Progressively evisculate global customer service.</p>
+                <div class="hero-btn ls-l" style="top: 437px; left: 50px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
+                offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;">
+                <a href="/tailor-products" class="vs-btn style1">Explore Our Services<i class="far fa-angle-right"></i></a>
+            </div>
+                <!-- <div class="hero-btn ls-l" style="top: 437px; left: 234px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
+        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/contact.html" class="vs-btn style4 ml-5 ml-md-4 ml-lg-0">Explore Products<i class="fal fa-calendar-alt"></i></a></div> -->
+            </div>
+            <div class="hero-slide ls-slide" data-ls="duration: 5000; transition2d: 4;">
+                <img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/5.jpg" alt="Slide Image" class="ls-bg">
+                <div class="hero-video-btn ls-l" style="left: 50px; top: 15px; width: 85px; height: 85px; line-height: 85px; font-size: 24px;" data-ls="offsetyin: -70; durationin: 1000; delayin: 300; easingin:easeOutQuint; offsetyout: -50; durationout: 1000; ">
+                </div>
+                
+                <p class="ls-l sub-title" style="left: 50px; top: 140px; width: 500px; white-space: normal; font-size: 20px; line-height: 30px; color: #ffffff; font-style: italic; font-weight: 500; margin-bottom: 0;" data-ls="offsetyin: -50; durationin: 1000; delayin: 400; easingin:easeOutQuint; offsetyout: -50; durationout: 1000;">
+                <img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/line-1.png" alt="Line Image">Style as you wish
+                </p>
+
+                <h1 class="title ls-l" style="left: 50px; top: 180px; width: 700px; line-height: 70px; font-size: 60px; font-weight: 700; color: #fff; white-space: normal; margin-bottom: 0;" data-ls="offsetxin: -200; durationin: 1000; delayin: 600; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">Making your Dress as good as you Dream</h1>
+                <p class="text ls-l" style="left: 50px; top: 345px; width: 625px; white-space: normal; margin-bottom: 0; color: #fff; font-weight: 500; font-size: 18px; line-height: 28px;" data-ls="offsetxin: -100; durationin: 1000; delayin: 700; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">We provide janitorial and specialized cleaning services for all types and sizes of complexes from small to large offices.</p>
+                <div class="hero-btn ls-l" style="top: 437px; left: 50px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
+        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="/tailor-products" class="vs-btn style1">Explore Our Services <i class="far fa-angle-right"></i></a></div>
                 <!-- <div class="hero-btn ls-l" style="top: 637px; left: 234px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
         offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/contact.html" class="vs-btn style4 ml-5 ml-md-4 ml-lg-0">Explore Products<i class="fal fa-calendar-alt"></i></a></div> -->
             </div>
-            <div class="hero-slide ls-slide" data-ls="duration: 7000; transition2d: 4;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/slide-img-1-2.jpg" alt="Slide Image" class="ls-bg">
-                <div class="hero-video-btn ls-l" style="left: 50px; top: 215px; width: 85px; height: 85px; line-height: 85px; font-size: 24px;" data-ls="offsetyin: -70; durationin: 1000; delayin: 300; easingin:easeOutQuint; offsetyout: -50; durationout:
+            <div class="hero-slide ls-slide" data-ls="duration: 7000; transition2d: 4;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/4.jpg" alt="Slide Image" class="ls-bg">
+                <div class="hero-video-btn ls-l" style="left: 50px; top: 15px; width: 85px; height: 85px; line-height: 85px; font-size: 24px;" data-ls="offsetyin: -70; durationin: 1000; delayin: 300; easingin:easeOutQuint; offsetyout: -50; durationout:
         1000; "></div>
-                <p class="ls-l sub-title" style="left: 50px; top: 340px; width: 500px; white-space: normal; font-size: 20px; line-height: 30px; color: #ffffff; font-style: italic; font-weight: 500; margin-bottom: 0;" data-ls="offsetyin: -50; durationin: 1000; delayin: 400; easingin:easeOutQuint; offsetyout: -50; durationout: 1000;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/line-1.png" alt="Line Image">Save Time & Money</p>
-                <h1 class="title ls-l" style="left: 50px; top: 380px; width: 700px; line-height: 70px; font-size: 60px; font-weight: 700; color: #fff; white-space: normal; margin-bottom: 0;" data-ls="offsetxin: -200; durationin: 1000; delayin: 600; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">Making your house as good as new</h1>
-                <p class="text ls-l" style="left: 50px; top: 545px; width: 625px; white-space: normal; margin-bottom: 0; color: #fff; font-weight: 500; font-size: 18px; line-height: 28px;" data-ls="offsetxin: -100; durationin: 1000; delayin: 700; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">We provide janitorial and specialized cleaning services for all types and sizes of complexes from small to large offices.</p>
-                <div class="hero-btn ls-l" style="top: 637px; left: 50px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
-        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/about.html" class="vs-btn style1">Appointment <i class="far fa-angle-right"></i></a></div>
-                <!-- <div class="hero-btn ls-l" style="top: 637px; left: 234px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
-        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/contact.html" class="vs-btn style4 ml-5 ml-md-4 ml-lg-0">Explore Products<i class="fal fa-calendar-alt"></i></a></div> -->
-            </div>
-            <div class="hero-slide ls-slide" data-ls="duration: 7000; transition2d: 4;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/slide-img-1-3.jpg" alt="Slide Image" class="ls-bg">
-                <div class="hero-video-btn ls-l" style="left: 50px; top: 215px; width: 85px; height: 85px; line-height: 85px; font-size: 24px;" data-ls="offsetyin: -70; durationin: 1000; delayin: 300; easingin:easeOutQuint; offsetyout: -50; durationout:
-        1000; "></div>
-                <p class="ls-l sub-title" style="left: 50px; top: 340px; width: 500px; white-space: normal; font-size: 20px; line-height: 30px; color: #ffffff; font-style: italic; font-weight: 500; margin-bottom: 0;" data-ls="offsetyin: -50; durationin: 1000; delayin: 400; easingin:easeOutQuint; offsetyout: -50; durationout: 1000;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/line-1.png" alt="Line Image">Professional Maintenance Services</p>
-                <h1 class="title ls-l" style="left: 50px; top: 380px; width: 700px; line-height: 70px; font-size: 60px; font-weight: 700; color: #fff; white-space: normal; margin-bottom: 0;" data-ls="offsetxin: -200; durationin: 1000; delayin: 600; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">Faster and Efficiently home clean</h1>
-                <p class="text ls-l" style="left: 50px; top: 545px; width: 625px; white-space: normal; margin-bottom: 0; color: #fff; font-weight: 500; font-size: 18px; line-height: 28px;" data-ls="offsetxin: -100; durationin: 1000; delayin: 700; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">We provide janitorial and specialized cleaning services for all types and sizes of complexes from small to large offices.</p>
-                <div class="hero-btn ls-l" style="top: 637px; left: 50px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
-        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/about.html" class="vs-btn style1">Appointment <i class="far fa-angle-right"></i></a></div>
+                <p class="ls-l sub-title" style="left: 50px; top: 140px; width: 500px; white-space: normal; font-size: 20px; line-height: 30px; color: #ffffff; font-style: italic; font-weight: 500; margin-bottom: 0;" data-ls="offsetyin: -50; durationin: 1000; delayin: 400; easingin:easeOutQuint; offsetyout: -50; durationout: 1000;"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/hero/line-1.png" alt="Line Image">Professional Services</p>
+                <h1 class="title ls-l" style="left: 50px; top: 180px; width: 700px; line-height: 70px; font-size: 60px; font-weight: 700; color: #fff; white-space: normal; margin-bottom: 0;" data-ls="offsetxin: -200; durationin: 1000; delayin: 600; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">The Joy of Dressing is An Art.</h1>
+                <p class="text ls-l" style="left: 50px; top: 345px; width: 625px; white-space: normal; margin-bottom: 0; color: #fff; font-weight: 500; font-size: 18px; line-height: 28px;" data-ls="offsetxin: -100; durationin: 1000; delayin: 700; easingin:easeOutQuint; offsetxout: -50; durationout: 1000;">We provide janitorial and specialized cleaning services for all types and sizes of complexes from small to large offices.</p>
+                <div class="hero-btn ls-l" style="top: 437px; left: 50px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
+        offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="/tailor-products" class="vs-btn style1">Explore Our Services<i class="far fa-angle-right"></i></a></div>
                 <!-- <div class="hero-btn ls-l" style="top: 637px; left: 234px; z-index: 3;" data-ls="offsetyin:50; rotatexin:10; scalexin:1.1; durationin:800; delayin:1400; easingin:easeOutQuint;
         offsetyout:100; rotatexout:10; scalexout:1.1; durationout:800;"><a href="products/html/clianio/demo/contact.html" class="vs-btn style4 ml-5 ml-md-4 ml-lg-0">Explore Products<i class="fal fa-calendar-alt"></i></a></div> -->
             </div>
@@ -174,25 +170,26 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="about-us-image position-relative py-40 py-xl-70">
-                        <div class="about-image1 rounded-circle overflow-hidden"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/about/about-3-1.jpg" alt="About Us Image" class="w-100"></a></div>
-                        <div class="about-imgage2 rounded-circle overflow-hidden p-1 p-xl-3 bg-white"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/about/about-3-2.jpg" alt="About Us Image" class="w-100 rounded-circle"></a></div>
-                        <div class="experiance-box bg-primary border-white rounded-circle d-flex align-items-center justify-content-center">
-                            <div class="exp-content pt-sm-2"><span class="total-exp counter text-white">25</span>
+                        <div class="about-image1 rounded-circle overflow-hidden"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/about/9.png" alt="About Us Image" class="w-100"></a></div>
+                        <div class="about-imgage2 rounded-circle overflow-hidden p-1 p-xl-3 bg-white"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/about/giphy.gif" alt="About Us Image" class="w-100 rounded-circle" style="background-color: #d7f1fb;"></a></div>
+                        <!-- <div class="experiance-box bg-primary border-white rounded-circle d-flex align-items-center justify-content-center">
+                            <div class="exp-content pt-sm-2">
+                                <span class="total-exp counter text-white">25</span>
                                 <p class="exp-text text-white mb-0 font-blod">Years Of Experience</p>
+                                
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-5 offset-xl-1">
                     <div class="about-content"><span class="sub-title mb-10 text-primary2 text-20"><strong>Professional Services</strong></span>
                         <h2 class="title heading1 text-primary3">We will make your world beautiful.</h2>
                         <p class="text">Proactively redefine alternative processes for resource sucking web services. Proactively optimize 24/365 strategic theme areas for superior niche markets.</p>
-                        <!--
-                        <div class="author-sign d-inline-block mb-3 mb-sm-0"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/about/author-sign.png" alt="Anhen Sheen"></div>
-                        <div class="author-info d-inline-block border-primary2 bg-white ml-sm-20 ml-lg-35">
-                            <h3 class="name heading4 text-primary2 mb-0">Anhen Sheen</h3><span class="degi text-primary3">Cleanio CEO</span>
-                        </div>
--->
+                        <ul class="features-list mb-25"> 
+                            <li>Design a New Look</li>
+                            <li>Revamp Your Wardrobe</li>
+                            <li>Recreate The Same Outfit</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -209,66 +206,93 @@
                 <div class="col-lg-9 col-xl-7">
                     <div class="section-title">
                         <h2 class="title1">Our Products</h2>
-                        <p class="text">Choose the Product you would like to stitch.</p><span class="icon"><i class="flaticon-cleaning"></i></span>
+                        <p class="text">Choose the Product you would like to stitch.</p><span class="icon mb-25"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/sewing-machine (2) - Copy.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-fluid px-0 overflow-hidden">
-            <div class="row gutters-10 vs-carousel" data-slidetoshow="5" data-arrows="true" data-xlslidetoshow="4" data-mlslidetoshow="3" data-lgslidetoshow="3" data-mdslidetoshow="2" data-smslidetoshow="2" data-xsslidetoshow="1">
-                <div class="col-lg-3">
-                    <div class="vs-project">
-                        <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/projects/project-img-1-1.jpg" alt="Project Image" class="w-100"></div>
-                        <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-house icon-3x"></i></span>
-                            <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">House Cleaning</a></h3>
-                            <p class="text-white mb-0">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+            <div class="row gutters-10 vs-carousel" data-slidetoshow="5" data-arrows="true" data-xlslidetoshow="4" data-mlslidetoshow="3" data-lgslidetoshow="3" data-mdslidetoshow="3" data-smslidetoshow="2" data-xsslidetoshow="2">
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/blouse-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu1.png" alt="Project Image" ></div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-house icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Gown Stitching</a></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="vs-project">
-                        <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/projects/project-img-1-2.jpg" alt="Project Image" class="w-100"> </div>
-                        <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-window-1 icon-3x"></i></span>
-                            <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Window Cleaning</a></h3>
-                            <p class="text-white mb-0">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/blouse-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu2.png" alt="Project Image" > </div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-window-1 icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Blouse Stitching</a></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="vs-project">
-                        <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/projects/project-img-1-3.jpg" alt="Project Image" class="w-100"> </div>
-                        <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-wipe icon-3x"></i></span>
-                            <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Glass Cleaning</a></h3>
-                            <p class="text-white mb-0">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/shirt-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu5.png" alt="Project Image" ></div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-mop icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Shirt Stitching</a></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="vs-project">
-                        <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/projects/project-img-1-4.jpg" alt="Project Image" class="w-100"></div>
-                        <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-kitchen icon-3x"></i></span>
-                            <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Kitchen Cleaning</a></h3>
-                            <p class="text-white mb-0">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/shirt-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu7.png" alt="Project Image" ></div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-mop icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Kurta Stitching</a></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="vs-project">
-                        <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/projects/project-img-1-5.jpg" alt="Project Image" class="w-100"></div>
-                        <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-mop icon-3x"></i></span>
-                            <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Floor Cleaning</a></h3>
-                            <p class="text-white mb-0">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/blouse-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu4.png" alt="Project Image" ></div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-kitchen icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Pant Stitching</a></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3">
-                    <div class="vs-project">
-                        <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/projects/project-img-1-6.jpg" alt="Project Image" class="w-100"></div>
-                        <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-cupboard icon-3x"></i></span>
-                            <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Washroom Cleaning</a></h3>
-                            <p class="text-white mb-0">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/blouse-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu8.png" alt="Project Image" ></div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-kitchen icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Pajama Stitching</a></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/blouse-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu9.png" alt="Project Image" ></div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-kitchen icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Kurti Stitching</a></h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-xs-6 ">
+                    <a href="/blouse-form" >
+                        <div class="vs-project">
+                            <div class="project-img" data-overlay="titlecolor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/anu3.png" alt="Project Image" > </div>
+                            <div class="project-content bg-primary2"><span class="text-title bg-icon"><i class="flaticon-wipe icon-3x"></i></span>
+                                <h3 class="heading4 text-white"><a href="products/html/clianio/demo/projects.html">Salwar-Suit Stitching</a></h3>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -280,61 +304,27 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 col-xl-6">
                     <div class="cta-content text-center text-lg-left">
-                        <h2 class="cta-title text-white">Onte rewarding <strong>relationship we will happily</strong> celebrate.</h2>
+                        <!-- <h2 class="cta-title text-white">Onte rewarding <strong>relationship we will happily</strong> celebrate.</h2> -->
+                        <!-- <h2 class="cta-title text-white">Fashion is The Armor To Servive The Reality of Everyday Life.</h2> -->
+                        <!-- <h2 class="cta-title text-white">When in doubt, wear red.</h2> -->
+                        <h2 class="cta-title text-white">'<strong>Style</strong> is a way to say who you are without having to<strong> Speak.</strong>'</h2>
                     </div>
                 </div>
                 <div class="col-lg-5 col-xl-6">
-                    <div class="cta-button text-center text-lg-right pt-4 pt-lg-0"><a href="/tailor-products" class="vs-btn style1 mb-3 mb-sm-0">Explore Products</a> <a href="products/html/clianio/demo/contact.html" class="vs-btn style2">Appointment<i class="far fa-calendar-alt"></i></a></div>
+                    <div class="cta-button text-center text-lg-right pt-4 pt-lg-0"><a href="/tailor-products" class="vs-btn style1 mb-3 mb-sm-0">Explore All Products</a> <a href="products/html/clianio/demo/contact.html" class="vs-btn style2">About Us <i class="far fa-calendar-alt"></i></a></div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!--********************************************* REQUEST-ESTIMATE-START ********************************-->
-
-    <!--
-    <section class="vs-estimate-form estimate-form-layout1 bg-secondary border-primary pt-lg-130 pt-60 pb-lg-100 pb-30" id="estimate">
-        <form action="#" class="estimate-form input-style2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-lg-9 col-xl-8">
-                        <div class="form-title">
-                            <h2 class="title1 mb-10 mb-lg-25">Request an Estimate</h2>
-                            <p class="font-medium text-md mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sit autem beatae! Error nihil laboriosam, cumque, aut libero ipsum sed.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-25 pt-lg-55 align-items-center gutters-20">
-                    <div class="form-group col-md-6 col-xl-3"><select>
-                            <option>Select Your Services</option>
-                            <option>Home Clean</option>
-                            <option>Shop Clean</option>
-                            <option>Bathroom Clean</option>
-                            <option>Garden Clean</option>
-                            <option>Supershop Clean</option>
-                            <option>Floor Clean</option>
-                        </select></div>
-                    <div class="form-group col-md-6 col-xl-3"><i class="fas fa-phone-alt"></i> <input type="number" placeholder="Your Mobile Number" class="form-control"></div>
-                    <div class="form-group col-md-8 col-lg-9 col-xl-4"><i class="fas fa-map-marker-alt"></i> <input type="text" placeholder="Type services Location" class="form-control"></div>
-                    <div class="form-group col-md-4 col-lg-3 col-lg-3 col-xl-2 text-left text-lg-right"><button class="vs-btn style2 w-100">Search Now<i class="far fa-long-arrow-alt-right ml-4"></i></button></div>
-                </div>
-            </div>
-        </form>
-    </section>
--->
-
-    <!--********************************************* REQUEST-ESTIMATE-END ****************************-->
-
-
     <!--********************************************* OUR-SERVICES-START ****************************-->
-
+<!-- 
     <section class="vs-service-wrapper service-box-layout3 pt-5 pt-md-3 pt-lg-5 pt-xl-0 pb-30 pb-lg-100" id="service">
-        <div class="container">
+        <div class="container" style="padding-top: 75px;" >
             <div class="row justify-content-center text-center">
                 <div class="col-xl-7">
                     <div class="section-title3"><span class="text-primary sub-title">Our <span class="bg-primary text-white">Work</span></span>
-                        <h2 class="title1">Service</h2><span class="icon mb-25"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/section-title-icon-1.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
+                        <h2 class="title1">Service</h2><span class="icon mb-25"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/sewing-machine (2) - Copy.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
                         <p class="text font-md font-medium">The great thing about fashion is that it always moves forward.</p>
                     </div>
                 </div>
@@ -345,42 +335,39 @@
                 <div class="col-xl-4">
                     <div class="vs-service background-image" data-vs-img="assets/img/service/service-box-bg-3-1.png">
                         <div class="service-image mb-minus-15"><a href="products/html/clianio/demo/service-details.html"><img class="w-100" src="/tailor/products/html/clianio/demo/assets/img-tailor/service/service-3-1.png" alt="Service Image"></a></div>
-                        <div class="service-content"><span class="service-price bg-primary2 text-white">$200 - $1000</span>
-                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">House Cleaning</a></h3>
-                            <p class="text">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                        <div class="service-content"><span class="service-price bg-primary2 text-white">Service-1</span>
+                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Get Your Fabric Stitched</a></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="vs-service background-image" data-vs-img="assets/img/service/service-box-bg-3-1.png">
                         <div class="service-image mb-minus-15"><a href="products/html/clianio/demo/service-details.html"><img class="w-100" src="/tailor/products/html/clianio/demo/assets/img-tailor/service/service-3-2.png" alt="Service Image"></a></div>
-                        <div class="service-content"><span class="service-price bg-primary2 text-white">$290 - $800</span>
-                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Commercial Cleaning</a></h3>
-                            <p class="text">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                        <div class="service-content"><span class="service-price bg-primary2 text-white">Service-2</span>
+                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Design a New Look</a></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="vs-service background-image" data-vs-img="assets/img/service/service-box-bg-3-1.png">
                         <div class="service-image mb-minus-15"><a href="products/html/clianio/demo/service-details.html"><img class="w-100" src="/tailor/products/html/clianio/demo/assets/img-tailor/service/service-3-3.png" alt="Service Image"></a></div>
-                        <div class="service-content"><span class="service-price bg-primary2 text-white">$199 - $999</span>
-                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Apartment Cleaning</a></h3>
-                            <p class="text">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                        <div class="service-content"><span class="service-price bg-primary2 text-white">Service-3</span>
+                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Revamp Your Wardrobe</a></h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="vs-service background-image" data-vs-img="assets/img/service/service-box-bg-3-1.png">
                         <div class="service-image mb-minus-15"><a href="products/html/clianio/demo/service-details.html"><img class="w-100" src="/tailor/products/html/clianio/demo/assets/img-tailor/service/service-3-4.png" alt="Service Image"></a></div>
-                        <div class="service-content"><span class="service-price bg-primary2 text-white">$560 - $2500</span>
-                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Window Cleaning</a></h3>
-                            <p class="text">Globally mesh multimedia based impera- tives before end-to-end ideas.</p>
+                        <div class="service-content">
+                            <span class="service-price bg-primary2 text-white">Service-4</span>
+                            <h3 class="title heading4"><a href="products/html/clianio/demo/service-details.html">Recreate The Same Outfit</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!--********************************************* OUR-SERVICES-END *****************************-->
 
@@ -392,7 +379,7 @@
                 <div class="col-lg-9 col-xl-7">
                     <div class="section-title">
                         <h2 class="title1">How We Works</h2>
-                        <p class="text">Professionally orchestrate accurate information via impactful infrastructures. Assertively fashion cross-platform models.</p><span class="icon"><i class="flaticon-cleaning"></i></span>
+                        <p class="text">Professionally orchestrate accurate information via impactful infrastructures. Assertively fashion cross-platform models.</p><span class="icon mb-25"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/machine.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
                     </div>
                 </div>
             </div>
@@ -402,54 +389,30 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="vs-work-process text-center">
                         <div class="work-process-top"><span class="shape bg-primary"></span> <span class="number bg-primary border-white text-white">01</span></div>
-                        <div class="work-process-content border-primary"><span class="icon text-primary"><i class="flaticon-wipe icon-4x"></i></span>
-                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Account & Check In</a></h3>
-                            <p class="text">Competently provide access to global technologies without client-focused.</p><a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
+                        <div class="work-process-content border-primary">
+                            <span class="icon text-primary2"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/hand.png" alt="Section Title Icons"> </span>
+                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Styling</a></h3>
+                            <p class="text">Based on the fabric you have, customise the design on our site - select necklines, patterns, etc of your liking. Notify us for pickup.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="vs-work-process text-center">
                         <div class="work-process-top"><span class="shape bg-primary3"></span> <span class="number bg-primary3 border-white text-white">02</span></div>
-                        <div class="work-process-content"><span class="icon text-primary3"><i class="flaticon-cleaning icon-4x"></i></span>
-                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Choose Category</a></h3>
-                            <p class="text">Competently provide access to global technologies without client-focused.</p><a href="products/html/clianio/demo/about.html" class="link-btn text-primary3">Read More<i class="far fa-long-arrow-right"></i></a>
+                        <div class="work-process-content">
+                            <span class="icon text-primary2"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/fabric.png" alt="Section Title Icons"> </span>
+                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Share a Sample</a></h3>
+                            <p class="text">To ensure the right fit, share with us a garment that fits you the best. It will be used for measurements and will be collected along with the fabric.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="vs-work-process text-center">
                         <div class="work-process-top"><span class="shape bg-primary2"></span> <span class="number bg-primary2 text-white border-white">03</span></div>
-                        <div class="work-process-content"><span class="icon text-primary2"><i class="flaticon-mop icon-4x"></i></span>
-                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Get Clean Property</a></h3>
-                            <p class="text">Competently provide access to global technologies without client-focused.</p><a href="products/html/clianio/demo/about.html" class="link-btn text-primary2">Read More<i class="far fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="vs-work-process text-center">
-                        <div class="work-process-top"><span class="shape bg-primary"></span> <span class="number bg-primary border-white text-white">01</span></div>
-                        <div class="work-process-content border-primary"><span class="icon text-primary"><i class="flaticon-wipe icon-4x"></i></span>
-                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Account & Check In</a></h3>
-                            <p class="text">Competently provide access to global technologies without client-focused.</p><a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="vs-work-process text-center">
-                        <div class="work-process-top"><span class="shape bg-primary3"></span> <span class="number bg-primary3 border-white text-white">02</span></div>
-                        <div class="work-process-content"><span class="icon text-primary3"><i class="flaticon-cleaning icon-4x"></i></span>
-                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Choose Category</a></h3>
-                            <p class="text">Competently provide access to global technologies without client-focused.</p><a href="products/html/clianio/demo/about.html" class="link-btn text-primary3">Read More<i class="far fa-long-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="vs-work-process text-center">
-                        <div class="work-process-top"><span class="shape bg-primary2"></span> <span class="number bg-primary2 text-white border-white">03</span></div>
-                        <div class="work-process-content"><span class="icon text-primary2"><i class="flaticon-mop icon-4x"></i></span>
-                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Get Clean Property</a></h3>
-                            <p class="text">Competently provide access to global technologies without client-focused.</p><a href="products/html/clianio/demo/about.html" class="link-btn text-primary2">Read More<i class="far fa-long-arrow-right"></i></a>
+                        <div class="work-process-content">
+                            <span class="icon text-primary2"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/sewing-machine.png" alt="Section Title Icons"> </span>
+                            <h3 class="process-title heading4"><a href="products/html/clianio/demo/about.html">Perfection at Work</a></h3>
+                            <p class="text">Our skilled and professional team will stitch your outfit with precision in the next 3-8 days. After which the finished product will be delivered directly to you.</p>
                         </div>
                     </div>
                 </div>
@@ -462,83 +425,83 @@
     <!--********************************************* Online Shop-START ******************************-->
 
 
-    <section class="vs-appointment-form appointment-form-layout1 background-image py-lg-130 py-60" id="contact" data-vs-img="/tailor/products/html/clianio/demo/assets/img-tailor/hero/slide-img-1-3.jpg" data-overlay="primary2" data-opacity="8">
+    <section class="vs-appointment-form appointment-form-layout1 background-image py-lg-130 py-60" id="contact" data-vs-img="/tailor/products/html/clianio/demo/assets/img-tailor/hero/banner-14.jpg" data-overlay="primary2" data-opacity="8">
         <div class="container">
             <div class="form-title pb-15 pb-lg-30">
-                <h2 class="title1 text-white">Visit Our Online Shop</h2>
+                <h2 class="title1 text-white">Our Online Shop Is Coming Soon</h2>
             </div>
             <div class="row">
                 <div class="col-xl-8">
                     <div class="appointment-form input-style2">
                         <div class="row gutters-10">
 
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
                                         Sarees
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Shirts
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Pants
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Trousers
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Blouse
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Gowns
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Salwar-Suit
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Kurti
                                     </div>
                                 </a>
                             </div>
-                            <div class="form-group col-md-4 text-center">
+                            <div class="form-group col-md-4 col-xs-6 text-center">
                                 <a href="#">
                                     <div class="form-control vs-btn style1">
-                                        Sarees
+                                        Lehnga
                                     </div>
                                 </a>
                             </div>
                             <!--                            <div class="form-group col-md-4"><input type="text" placeholder="mm/dd/yyy" class="form-control date-pick"></div>-->
                             <div class="form-group col-12 mt-20 mb-0 text-center">
                                 <a href="/tailor-products">
-                                    <div class="vs-btn style1">--> Visit Shop <i class="fal fa-calendar-alt"></i></div>
+                                    <div class="vs-btn style1" >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Coming Soon <i class="fal fa-calendar-alt"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
                                 </a>
                             </div>
                         </div>
@@ -549,133 +512,13 @@
     </section>
     <!--********************************************* Online SHop-END *****************************************-->
 
-    <!--********************************************* CUSTOMER-REVIEW-START *****************************************-->
-
-    <!--
-    <section class="vs-testimonial-wrapper vs-testimonial-layout1 py-60 py-lg-130">
-        <div class="container">
-            
-            <div class="row flex-row-reverse align-items-center">
-                <div class="col-lg-5 col-xl-6">
-                    <div class="testimonial-about-image position-relative d-inline-block"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/testimonial-video-img-1-1.jpg" alt="Testimonial Image"> <a href="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1" class="play-btn overlay-center popup-video"><i class="fas fa-play"></i></a></div>
-                </div>
-                <div class="col-lg-7 col-xl-6">
-                    <div class="-about pt-4 pt-lg-0 pb-3 pb-lg-0">
-                        <h2 class="heading1 font-normal"><strong>Experience</strong> a healthier cleaner <strong class="text-primary2">home.</strong></h2>
-                        <p class="font-italic font-medium font-md mb-20 mb-xl-40">Professionally e-enable client-based e-markets through one-to-one materials. Rapidiously develop long-term high-impact ROI.</p>
-                        <div class="inner-list">
-                            <ul>
-                                <li><strong>Seamlessly incubate intuitive data</strong>
-                                    <p class="mb-0">Proactively redefine alternative processes for resource sucking web services. Proactively optimize 24/365 strategic.</p>
-                                </li>
-                                <li><strong>Visavis installed base testing</strong>
-                                    <p class="mb-0">Proactively redefine alternative processes for resource sucking web services. Proactively optimize 24/365 strategic.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9 col-xl-7">
-                        <div class="section-title2">
-                            <h2 class="title">Testimonial</h2><span class="icon"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/section-title-icon-1.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
-                            <p class="text">Quickly extend innovative meta-services for multifunctional paradigms. Distinctively customize focused experiences through vertical best practices.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-area pt-30 pt-lg-80 pb-10 pb-lg-50 px-20 px-md-40 px-lg-80 px-xl-100 mb-30 bg-white">
-                <div class="testimonial-author-image vs-carousel" id="author-image" data-slidetoshow="3" data-asnavfor="#testomonial-content" data-centermode="true" data-xlcentermode="true" data-mlcentermode="true" data-lgcentermode="true" data-mdcentermode="true" data-smcentermode="true" data-xscentermode="true" data-arrows="true" data-xlarrows="true" data-mlarrows="true" data-lgarrows="true" data-mdarrows="true" data-smarrows="true">
-                    <div class="image"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/author-img-1.jpg" alt="Author Image"></div>
-                    <div class="image"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/author-img-2.jpg" alt="Author Image"></div>
-                    <div class="image"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/author-img-3.jpg" alt="Author Image"></div>
-                    <div class="image"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/author-img-4.jpg" alt="Author Image"></div>
-                    <div class="image"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/author-img-5.jpg" alt="Author Image"></div>
-                    <div class="image"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/testimonial/author-img-6.jpg" alt="Author Image"></div>
-                </div>
-                <div class="testimonial-content-area vs-carousel" id="testomonial-content" data-fade="true" data-slidetoshow="1" data-asnavfor="#author-image">
-                    <div class="testimonial-content text-center">
-                        <h3 class="name mb-0 heading5">Adam Jonas</h3><span class="degi text-title">Cleaner</span>
-                        <p class="text font-medium text-title pt-25">“ Seamlessly repurpose 24/7 e-business vis-a-vis resource sucking customer service. Efficiently unleash backward-compatible manufactured products whereas backward-compatible infrastructures. Dynamically cultivate process-centric relationships and progressive platforms ”</p>
-                    </div>
-                    <div class="testimonial-content text-center">
-                        <h3 class="name mb-0 heading5">Naj Pater</h3><span class="degi text-title">Member</span>
-                        <p class="text font-medium text-title pt-25">“ Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquam quis, labore, dignissimos hic neque obcaecati dicta perferendis, repellendus suscipit debitis? Ipsum suscipit nesciunt laborum hic alias cum sed maxime! ”</p>
-                    </div>
-                    <div class="testimonial-content text-center">
-                        <h3 class="name mb-0 heading5">Jezzy Lamot</h3><span class="degi text-title">Worker</span>
-                        <p class="text font-medium text-title pt-25">“ Lo Ex perferendis architecto maiores omnis eos voluptatum earum iusto totam! Aspernatur tenetur tempora distinctio repellat natus dolore, debitis voluptatibus illum hic, nulla totam aperiam inventore. Quam quo recusandae quae impedit commodi sit. ”</p>
-                    </div>
-                    <div class="testimonial-content text-center">
-                        <h3 class="name mb-0 heading5">Luis Marko</h3><span class="degi text-title">Co - Founder</span>
-                        <p class="text font-medium text-title pt-25">“ natus dolore, debitis voluptatibus illum hic, nulla totam aperiam inventore. Quam quo recusandae quae impedit commodi sitoducts whereas backward-compatible infrastructures. Dynamically cultivate process-centric relationships and progressive platforms ”</p>
-                    </div>
-                    <div class="testimonial-content text-center">
-                        <h3 class="name mb-0 heading5">David Roja</h3><span class="degi text-title">Co - Founder</span>
-                        <p class="text font-medium text-title pt-25">“ Seamlessly repurpose 24/7 e-business vis-a-vis resource sucking customer service. Efficiently unleash backward-compatible manufactured products whereas backward-compatible infrastructures. Dynamically cultivate process-centric relationships and progressive platforms ”</p>
-                    </div>
-                    <div class="testimonial-content text-center">
-                        <h3 class="name mb-0 heading5">Micle Clark</h3><span class="degi text-title">Publisher</span>
-                        <p class="text font-medium text-title pt-25">“ Lo Ex perferendis architecto maiores omnis eos voluptatum earum iusto totam! Aspernatur tenetur tempora distinctio repellat natus dolore, debitis voluptatibus illum hic, nulla totam aperiam inventore. Quam quo recusandae quae impedit commodi sit. ”</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
--->
-
-    <!--********************************************* CUSTOMER-REVIEW-END *****************************************-->
-
-    <!--********************************************* TOP-BRAND-START *****************************************-->
-    <!--
-<div class="vs-brand-wrapper vs-brand-layout1 bg-secondary py-60 py-lg-100">
-    <div class="container">
-        <div class="row vs-carousel text-center" data-slidetoshow="5" data-lgslidetoshow="4" data-mdslidetoshow="4" data-smslidetoshow="3" data-xsslidetoshow="2">
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-1.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-2.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-3.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-4.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-5.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-1.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-2.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-3.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-4.png" alt="Brand Image"></a></div>
-            </div>
-            <div class="col-sm-4 col-lg-2">
-                <div class="vs-brand py-lg-30"><a href="products/html/clianio/demo/about.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/brand/brand-img-1-5.png" alt="Brand Image"></a></div>
-            </div>
-        </div>
-    </div>
-</div>-->
-
-    <!--********************************************* TOP-BRAND-END *****************************************-->
     <!--******************************************************************************************************-->
     <section class="vs-features-wrapper vs-features-layout1 pt-60 pt-lg-130" id="features">
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-xl-7">
-                    <div class="section-title3"><span class="text-white sub-title">What <span class="bg-primary text-white">We Do</span></span>
-                        <h2 class="title1">Why Choose Us</h2><span class="icon mb-25"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/section-title-icon-1.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
+                    <div class="section-title3"><span class="text-white sub-title"></span>
+                        <h2 class="title1">Why Choose Us</h2><span class="icon mb-25"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/sewing-machine (2) - Copy.png" alt="Section Title Icons"> <i class="line"></i> <i class="line-2"></i></span>
                     </div>
                 </div>
             </div>
@@ -685,67 +528,47 @@
                 <div class="col-xl-4">
                     <div class="vs-features border-primary bg-white"><span class="features-icon text-primary mb-15 mb-xl-25"><i class="flaticon-window-1 icon-2x"></i></span>
                         <h3 class="features-title heading4 mb-10"><a href="products/html/clianio/demo/about.html">Excellent Services</a></h3>
-                        <p class="features-text mb-15">We offer a variety of great cleaning services to our customers.</p>
+                        <p class="features-text mb-15">We offer a variety of great stitching services to our customers.</p>
                         <ul class="features-list mb-25">
-                            <li>We recognise that cleaning</li>
-                            <li>We recognise that cleaning</li>
-                        </ul><a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
+                            <li>Quick Stitching</li>
+                            <li>Style According You</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="vs-features border-primary bg-white"><span class="features-icon text-primary mb-15 mb-xl-25"><i class="flaticon-washing-machine icon-2x"></i></span>
-                        <h3 class="features-title heading4 mb-10"><a href="products/html/clianio/demo/about.html">Safe Cleaning Supplies</a></h3>
-                        <p class="features-text mb-15">We offer a variety of great cleaning services to our customers.</p>
+                        <h3 class="features-title heading4 mb-10"><a href="products/html/clianio/demo/about.html">Convenient Scheduling</a></h3>
+                        <p class="features-text mb-15">We offer a variety of great stitching services to our customers.</p>
                         <ul class="features-list mb-25">
-                            <li>We recognise that cleaning</li>
-                            <li>We recognise that cleaning</li>
-                        </ul><a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
+                            <li>Online Comfort</li>
+                            <li>Call Us For Any Update</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="vs-features border-primary bg-white"><span class="features-icon text-primary mb-15 mb-xl-25"><i class="flaticon-cleaning-3 icon-2x"></i></span>
-                        <h3 class="features-title heading4 mb-10"><a href="products/html/clianio/demo/about.html">Convenient Scheduling</a></h3>
-                        <p class="features-text mb-15">We offer a variety of great cleaning services to our customers.</p>
+                        <h3 class="features-title heading4 mb-10"><a href="products/html/clianio/demo/about.html">Made For You</a></h3>
+                        <p class="features-text mb-15">We offer a variety of great stitching services to our customers.</p>
                         <ul class="features-list mb-25">
-                            <li>We recognise that cleaning</li>
-                            <li>We recognise that cleaning</li>
-                        </ul><a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
+                            <li>No Compromise in Quality</li>
+                            <li>Your Own Personal Taste</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <!-- <div class="col-xl-4">
                     <div class="vs-features border-primary bg-white"><span class="features-icon text-primary mb-15 mb-xl-25"><i class="flaticon-project-management icon-2x"></i></span>
                         <h3 class="features-title heading4 mb-10"><a href="products/html/clianio/demo/about.html">Long Time Cleaning</a></h3>
                         <p class="features-text mb-15">We offer a variety of great cleaning services to our customers.</p>
                         <ul class="features-list mb-25">
                             <li>We recognise that cleaning</li>
                             <li>We recognise that cleaning</li>
-                        </ul><a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
+                        </ul>
+                        <a href="products/html/clianio/demo/about.html" class="link-btn">Read More<i class="far fa-long-arrow-right"></i></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
-
-    <!--********************************************* SUBSCRIBE-EMAIL-START *****************************************-->
-    <!--
-    <div class="vs-subscribe-form-wrap subscribe-form-layout1 bg-secondary border-primary py-40 py-lg-80">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 col-xl-7">
-                    <form action="#" class="input-style2">
-                        <div class="row align-items-center">
-                            <div class="form-group col-md-8 mb-4 mb-md-0"><input type="email" placeholder="Enter Your Email Address" class="form-control"> <i class="fal fa-envelope"></i></div>
-                            <div class="form-group col-md-4 text-center text-md-left mb-0"><button class="vs-btn style2">Subscribe<i class="far fa-long-arrow-alt-right"></i></button></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-
-    <!--********************************************* SUBSCRIBE-EMAIL-END *****************************************-->
-
 
     <!--********************************************* FOOTER-START *****************************************-->
 
@@ -755,30 +578,26 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-3">
                         <div class="widget">
-                            <h3 class="widget_title">Our Services</h3>
+                            <h3 class="widget_title">Women Services</h3>
                             <ul>
-                                <li><a href="products/html/clianio/demo/service-details.html">Cleaning Services</a></li>
-                                <li><a href="products/html/clianio/demo/service-details.html">House Cleaning</a></li>
-                                <li><a href="products/html/clianio/demo/service-details.html">Cleaning Services</a></li>
-                                <li><a href="products/html/clianio/demo/service-details.html">Professional Cleaning</a></li>
-                                <li><a href="products/html/clianio/demo/service-details.html">Window Cleaning</a></li>
-                                <li><a href="products/html/clianio/demo/service-details.html">Domestic Cleaning</a></li>
+                                
+                                <li><a href="products/html/clianio/demo/service-details.html">Blouse Stitching</a></li>
+                                <li><a href="products/html/clianio/demo/service-details.html">Salwar Suit Stitching</a></li>
+                                <li><a href="products/html/clianio/demo/service-details.html">Gown Stitching</a></li>
+                                <li><a href="products/html/clianio/demo/service-details.html">Kurti Stitching</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4 col-xl-3">
                         <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="vs-recent-post">
-                                <div class="recent-post">
-                                    <div class="post-img"><a href="products/html/clianio/demo/blog.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/footer/post-thumb-1-1.jpg" alt="Post Image"></a></div>
-                                    <div class="post-content"><a href="products/html/clianio/demo/blog.html">Assertively visualize best-of-breed .</a> <span><i class="fal fa-calendar-alt"></i>22 June, 2020</span></div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="post-img"><a href="products/html/clianio/demo/blog.html"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/footer/post-thumb-1-2.jpg" alt="Post Image"></a></div>
-                                    <div class="post-content"><a href="products/html/clianio/demo/blog.html">Lorem ipsum dolor sit amet order</a> <span><i class="fal fa-calendar-alt"></i>15 July, 2020</span></div>
-                                </div>
-                            </div>
+                            <h3 class="widget_title">Men Services</h3>
+                            <ul>
+                                <li><a href="products/html/clianio/demo/service-details.html">Shirt Stitching</a></li>
+                                <li><a href="products/html/clianio/demo/service-details.html">Pant Stitching</a></li>
+                                <li><a href="products/html/clianio/demo/service-details.html">Kurta Stitching</a></li>
+                                <li><a href="products/html/clianio/demo/service-details.html">Pajama Stitching</a></li>
+                                
+                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-5 col-xl-5 offset-xl-1">
@@ -787,13 +606,13 @@
                             <div class="vs-contact-widget">
                                 <div class="row">
                                     <div class="col-sm-6 border-right">
-                                        <p class="text"><i class="far fa-map-marker-alt"></i>70 Pleasant Valley Street, Methuen MA 1844</p>
+                                        <p class="text"><i class="far fa-map-marker-alt"></i>Kalyanpur, Thedi Pulia 226022</p>
                                         <p class="text"><i class="far fa-angle-right"></i><a href="products/html/clianio/demo/contact.html">Get Direction</a></p>
                                     </div>
                                     <div class="col-sm-6 pl-20 pb-1">
-                                        <p class="text"><i class="fal fa-fax"></i><a href="tel:65965252561">659 6525 2561</a></p>
-                                        <p class="text"><i class="fal fa-envelope"></i><a href="tel:info@clianio.com">info@clianio.com</a></p>
-                                        <p class="text"><i class="fal fa-phone-alt"></i>Get Free Estimate <a href="tel:+259125621523" class="text-primary2 font-blod text-lg d-block">+259 1256 21523</a></p>
+                                        <p class="text"><i class="fal fa-fax"></i><a href="tel:65965252561">+91 522 796 5388</a></p>
+                                        <p class="text"><i class="fal fa-envelope"></i><a href="tel:info@clianio.com">info@sew.com</a></p>
+                                        <!-- <p class="text"><i class="fal fa-phone-alt"></i>Get Free Estimate <a href="tel:+259125621523" class="text-primary2 font-blod text-lg d-block">+91 522 796 5388</a></p> -->
                                     </div>
                                     <div class="col-12">
                                         <div class="social-links border-top pt-20">
@@ -815,7 +634,7 @@
             </div>
         </div>
         <div class="footer-copyright text-center pt-25 pb-25"><span class="line border-white"></span>
-            <p class="text-white mb-0 font-blod">&copy; 2020 Cleanio | All Right Reserved By <a href="https://themeforest.net/user/vecuro" target="_blank">Vecuro.</a></p>
+            <p class="text-white mb-0 font-blod">&copy; 2021 Cleanio | All Right Reserved By <a href="https://themeforest.net/user/vecuro" target="_blank">Vecuro.</a></p>
         </div>
     </footer>
     <div class="sidemenu-wrapper d-none d-lg-block">

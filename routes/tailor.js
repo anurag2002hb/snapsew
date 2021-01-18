@@ -7,6 +7,16 @@ const isAuth = require('../middleware/is-auth');
 
 const router = express.Router();
 
+
+// /tailor/add-product => GET
+router.get('/add-service', isAuth, tailorController.getCustomization);
+
+// /tailor/products => GET
+router.get('/services', isAuth, tailorController.getServices);
+
+// /tailor/add-product => POST
+router.post('/add-service', isAuth, tailorController.postCustomization);
+
 // router.get('/', shopController.getIndex);
 
 // router.get('/products', shopController.getProducts);
@@ -28,6 +38,14 @@ const router = express.Router();
 router.get('/tailor', tailorController.getTailor);
 
 router.get('/tailor-products', tailorController.getTailorProducts);
+
+router.get('/blouse-form', tailorController.getBlouseForm);
+
+router.get('/shirt-form', tailorController.getShirtForm);
+
+router.get('/checkout', tailorController.getCheckout);
+
+router.get('/tailor-cart', tailorController.getCart);
 
 
 
