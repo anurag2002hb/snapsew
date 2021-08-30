@@ -3,6 +3,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
+  // proType: {
+  //   pant: {
+  //     type: String,
+  //     required: true
+  //   },
+  //   shirt: {
+  //     type: String,
+  //     required: true
+  //   }
+  // }
+  // ,
   title: {
     type: String,
     required: true

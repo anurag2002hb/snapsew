@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const Service = require('../models/service');
 
 exports.getAddProduct = (req, res, next) => {
   res.render('admin/edit-product', {
@@ -87,6 +88,20 @@ exports.getProducts = (req, res, next) => {
         prods: products,
         pageTitle: 'Admin Products',
         path: '/admin/products'
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+exports.getAdminServices = (req, res, next) => {
+  
+  Service.find({ userId: req.user._id })
+    .then(services => {
+      console.log(services);
+      res.render('tailor/precheckout', {
+        servs: services,
+        pageTitle: 'Admin Services',
+        path: '/admin/services'
       });
     })
     .catch(err => console.log(err));

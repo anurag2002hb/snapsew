@@ -7,23 +7,41 @@ const isAuth = require('../middleware/is-auth');
 
 const router = express.Router();
 
-
-// /tailor/add-product => GET
-router.get('/add-service', isAuth, tailorController.getCustomization);
-
 // /tailor/products => GET
-router.get('/services', isAuth, tailorController.getServices);
+router.post('/create-checkout-service', isAuth, tailorController.postChekoutService);
 
-// /tailor/add-product => POST
-router.post('/add-service', isAuth, tailorController.postCustomization);
 
-// router.get('/', shopController.getIndex);
+router.get('/checkout', tailorController.getCheckout);
+
+
+router.get('/addres', tailorController.getAddres);
+
+router.post('/addres', tailorController.postAddres);
+
+router.get('/tailor-cart', tailorController.getTailorCart);
+
+router.get('/tailor-orders', tailorController.getTailorOrders);
+
+router.get('/precheckout', tailorController.getPreCheckout);
+
+// //////////////
+
+// router.get('/edit-product/:productId', isAuth, adminController.getEditProduct);
+
+// router.post('/edit-product', isAuth, adminController.postEditProduct);
+
+router.post('/delete-service', isAuth, tailorController.postDeleteService);
+
+// //////////////
+
+// router.post('/checkout', tailorController.postCheckout);
+
 
 // router.get('/products', shopController.getProducts);
 
 // router.get('/products/:productId', shopController.getProduct);
 
-// router.get('/cart', isAuth, shopController.getCart);
+// router.get('/tailor-cart', isAuth, shopController.getCart);
 
 // router.post('/cart', isAuth, shopController.postCart);
 
@@ -37,15 +55,36 @@ router.post('/add-service', isAuth, tailorController.postCustomization);
 
 router.get('/tailor', tailorController.getTailor);
 
+router.get('/tailor-basket', tailorController.getTailorBasket);
+
+router.get('/tailor-sign-in', tailorController.getTailorSignIn);
+
 router.get('/tailor-products', tailorController.getTailorProducts);
 
-router.get('/blouse-form', tailorController.getBlouseForm);
+// //////////////////////////////various products///////////////////////
 
-router.get('/shirt-form', tailorController.getShirtForm);
 
-router.get('/checkout', tailorController.getCheckout);
+router.post('/add-common-service', isAuth, tailorController.postCommonCustomization);
 
-router.get('/tailor-cart', tailorController.getCart);
+// men
+
+router.get('/add-shirt-service', isAuth, tailorController.getShirtCustomization);
+
+router.get('/add-pant-service', isAuth, tailorController.getPantCustomization);
+
+router.get('/add-kurta-service', isAuth, tailorController.getKurtaCustomization);
+
+router.get('/add-pajama-service', isAuth, tailorController.getPajamaCustomization);
+
+// women
+
+router.get('/add-blouse-service', isAuth, tailorController.getBlouseCustomization);
+
+router.get('/add-gown-service', isAuth, tailorController.getGownCustomization);
+
+router.get('/add-kurti-service', isAuth, tailorController.getKurtiCustomization);
+
+router.get('/add-salwar-suit-service', isAuth, tailorController.getSalwarSuitCustomization);
 
 
 

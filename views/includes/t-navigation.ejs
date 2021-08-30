@@ -1,0 +1,94 @@
+<div class="popup-search-box d-none d-lg-block"><button class="searchClose"><i class="fal fa-times"></i></button>
+  <form action="#"><input type="text" placeholder="What are you looking for"> <button type="submit"><i class="fal fa-search"></i></button></form>
+</div>
+<div class="vs-menu-wrapper">
+  <div class="vs-menu-area"><button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
+      <div class="mobile-logo"><a href="/tailor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/ss.png" alt="Clianio"></a></div>
+      <div class="vs-mobile-menu onepage-nav"></div>
+  </div>
+</div>
+<div class="sticky-header-wrap sticky-header py-1 py-sm-2 py-lg-1">
+  <div class="container position-relative">
+      <div class="row align-items-center">
+          <div class="col-5 col-md-3">
+              <div class="logo"><a href="tailor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/ss.png" alt="Clianio"></a></div>
+          </div>
+          <div class="col-7 col-md-9 text-right position-static">
+              <nav class="main-menu menu-style1 d-none d-lg-block onepage-nav">
+                  <ul>
+                      <li><a href="/tailor">Home</a></li>
+                      <li><a href="#about">About us</a></li>
+                      <li><a href="#estimate">Men</a></li>
+                      <li><a href="#service">Women</a></li>
+                      <li><a href="#process">Cart</a></li>
+                      <li><a href="#project">Orders</a></li>
+                      <% if (!isAuthenticated) { %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign-up</a></li>
+                      <% } %>
+                      <% if (isAuthenticated) { %>
+                        <li>
+                            <form action="/logout" method="post">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <button style="background-color: #fff;  border: 2px solid #fff; font-weight: 700;" type="submit">Logout</button>
+                            </form>
+                        </li>
+                      <% } %>
+                      <!-- <li><a href="#blog">Blog</a></li>
+                      <li><a href="#contact">Contact</a></li> -->
+                  </ul>
+              </nav><button class="vs-menu-toggle d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
+          </div>
+      </div>
+  </div>
+</div>
+<header class="vs-header-wrapper header-layout1">
+  <div class="header-logo"><a href="/tailor"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/ss.png" alt="Clianio"></a></div>
+  <!-- <a href="tel:+892125658965" class="vs-btn style4 call-button">+892 1256 58965<i class="fas fa-phone-alt"></i></a> -->
+
+  <div class="header-menu-wrap">
+      <div class="container position-relative">
+          <div class="row">
+              <div class="col-lg-2 col-lg-3 col-xl-1">
+
+              </div>
+              <div class="col-md-12 col-lg-7 col-xl-8  position-static">
+                  <nav class="main-menu menu-style1 text-center mobile-menu-active onepage-nav">
+                      <ul>
+                        <li><a href="/tailor">Home</a></li>
+                        <li><a href="/tailor-products">Men</a></li>
+                        <li><a href="/tailor-products">Women</a></li>
+                        <li><a href="#process">Cart</a></li>
+                        <li><a href="#project">Orders</a></li>
+                        <li><a href="#about">About us</a></li>
+                          <!-- <li><a href="#project">Project</a></li> -->
+                          
+                      </ul>
+                  </nav>
+                  <button class="vs-menu-toggle d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
+                  
+              </div>
+              <div class="col-lg-2 align-self-center">
+                  <div class="header-button text-right d-none d-lg-block">
+                      <ul>
+                          <!-- <li><a href="#" class="searchBoxTggler"><i class="far fa-search"></i></a></li> -->
+                          <!-- <li><a href="#" class="sideMenuToggler"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/icon/user (3).png" alt="Clianio"></i></a></li> -->
+                            <% if (!isAuthenticated) { %>
+                            <li><a href="/login"><b>Login</b></a></li>
+                            <li><a href="/signup"><b>Sign-up</b></a></li>
+                            <% } %>
+                            <% if (isAuthenticated) { %>
+                            <li>
+                              <form action="/logout" method="post">
+                                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                  <button style="background-color: #fff;  border: 2px solid #fff; font-weight: 700;" type="submit">Logout</button>
+                              </form>
+                            </li>
+                            <% } %>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>

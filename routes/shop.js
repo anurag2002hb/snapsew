@@ -17,17 +17,17 @@ router.get('/cart', isAuth, shopController.getCart);
 
 router.post('/cart', isAuth, shopController.postCart);
 
+router.get('/basket', isAuth, shopController.getBasket);
+
+router.post('/basket', isAuth, shopController.postBasket);
+
 router.post('/cart-delete-item', isAuth, shopController.postCartDeleteProduct);
 
 router.post('/create-order', isAuth, shopController.postOrder);
 
+router.post('/create-tailor-order', isAuth, shopController.postTailorOrder);
+
 router.get('/orders', isAuth, shopController.getOrders);
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////// here i start////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////
-
-router.get('/home', shopController.getHome);
 
 
 module.exports = router;

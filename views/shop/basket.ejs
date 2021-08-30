@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (services.length > 0) { %>
+                <ul class="cart__item-list">
+                    <% services.forEach(p => { %>
+                        <li class="cart__item" style="display: block;">
+                            <h1><%= p.serviceId.object %></h1>
+                            <p><%= p.serviceId.p1 %></p>
+                            <p><%= p.serviceId.p2 %></p>
+                            <p><%= p.serviceId.p3 %></p>
+                            <p><%= p.serviceId.p4 %></p>
+                            <p><%= p.serviceId.p5 %></p>
+                            <p><%= p.serviceId.p6 %></p>
+                            <p><%= p.serviceId.p7 %></p>
+                            <p><%= p.serviceId.p8 %></p>
+                            <p><%= p.serviceId.p9 %></p>
+                            
+                        </li>
+                    <% }) %>
+                </ul>
+                <hr>
+                <div class="centered">
+                    <form action="/create-tailor-order" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit" class="btn">Order Now!</button>
+                    </form>
+                </div>
+                
+            <% } else { %>
+                <h1>No Products in Cart!</h1>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>

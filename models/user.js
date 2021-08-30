@@ -24,8 +24,80 @@ const userSchema = new Schema({
         quantity: { type: Number, required: true }
       }
     ]
+  },
+  basket: {
+    things: [
+      {
+        serviceId: {
+          type: Schema.Types.ObjectId,
+          ref: 'Service',
+          required: true
+        }
+      }
+    ]
+  },
+  // address: {
+  //   adds: [
+  //     {
+  //       pincode: {
+  //         type: Number,
+  //         required: true
+  //       },
+  //       add: {
+  //         type: String,
+  //         required: true
+  //       },
+  //     }
+  //   ]
+  // }
+  address: {
+    pincode: {
+      type: Number,
+      required: true
+    },
+    add: {
+      type: String,
+      required: true
+    }
   }
+  
 });
+
+// userSchema.methods.addToBasket = function(service) {
+//   const basketServiceIndex = this.basket.things.findIndex(cp => {
+//     return cp.serviceId.toString() === service._id.toString();
+//   });
+  
+//   const updatedCartItems = [...this.basket.things];
+
+//     updatedBasketThings.push({
+//       serviceId: service._id
+//     });
+  
+//   const updatedBasket = {
+//     things: updatedBasketThings
+//   };
+//   this.basket = updatedBasket;
+//   return this.save();
+// };
+
+userSchema.methods.addToBasket = function(service) {
+  const basketServiceIndex = this.basket.things.findIndex(cp => {
+    return cp.serviceId.toString() === service._id.toString();
+  });
+  
+  const updatedBasketThings = [...this.basket.things];
+
+    updatedBasketThings.push({
+      serviceId: service._id
+    });
+  
+  const updatedBasket = {
+    things: updatedBasketThings
+  };
+  this.basket = updatedBasket;
+  return this.save();
+};
 
 userSchema.methods.addToCart = function(product) {
   const cartProductIndex = this.cart.items.findIndex(cp => {
@@ -60,6 +132,10 @@ userSchema.methods.removeFromCart = function(productId) {
 
 userSchema.methods.clearCart = function() {
   this.cart = { items: [] };
+  return this.save();
+};
+userSchema.methods.clearBasket = function() {
+  this.basket = { things: [] };
   return this.save();
 };
 

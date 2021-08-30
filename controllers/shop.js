@@ -1,5 +1,8 @@
 const Product = require('../models/product');
 const Order = require('../models/order');
+const Service = require('../models/service');
+
+// 'userId': req.user._id
 
 exports.getProducts = (req, res, next) => {
   Product.find()
@@ -29,6 +32,19 @@ exports.getProduct = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+exports.getService = (req, res, next) => {
+  const servId = req.params.serviceId;
+  Service.findById(servId)
+    .then(service => {
+      res.render('shop/service-detail', {
+        service: service,
+        pageTitle: service,
+        path: '/services'
+      });
+    })
+    .catch(err => console.log(err));
+};
+
 exports.getIndex = (req, res, next) => {
   Product.find()
     .then(products => {
@@ -41,6 +57,21 @@ exports.getIndex = (req, res, next) => {
     .catch(err => {
       console.log(err);
     });
+};
+
+exports.getBasket = (req, res, next) => {
+  req.user
+    .populate('basket.things.serviceId')
+    .execPopulate()
+    .then(user => {
+      const services = user.basket.things;
+      res.render('shop/basket', {
+        path: '/basket',
+        pageTitle: 'Your Basket',
+        services: services
+      });
+    })
+    .catch(err => console.log(err));
 };
 
 exports.getCart = (req, res, next) => {
@@ -58,6 +89,8 @@ exports.getCart = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+
+
 exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId)
@@ -67,6 +100,19 @@ exports.postCart = (req, res, next) => {
     .then(result => {
       console.log(result);
       res.redirect('/cart');
+    });
+};
+
+
+exports.postBasket = (req, res, next) => {
+  const servId = req.body.serviceId;
+  Service.findById(servId)
+    .then(service => {
+      return req.user.addToBasket(service);
+    })
+    .then(result => {
+      console.log(result);
+      res.redirect('/tailor-cart');
     });
 };
 
@@ -118,14 +164,30 @@ exports.getOrders = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
-//////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////// here i start ///////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
 
-
-exports.getHome = (req, res, next) => {
-  res.render('shop/home', {
-    pageTitle: 'Home',
-    path: '/'
-  });
+exports.postTailorOrder = (req, res, next) => {
+  req.user
+    .populate('basket.things.serviceId')
+    .execPopulate()
+    .then(user => {
+      const services = user.basket.things.map(i => {
+        return { service: { ...i.serviceId._doc } };
+      });
+      const order = new Order({
+        user: {
+          email: req.user.email,
+          userId: req.user
+        },
+        services: services
+      });
+      return order.save();
+    })
+    .then(result => {
+      return req.user.clearBasket();
+    })
+    .then(() => {
+      res.redirect('/checkout');
+    })
+    .catch(err => console.log(err));
 };
+

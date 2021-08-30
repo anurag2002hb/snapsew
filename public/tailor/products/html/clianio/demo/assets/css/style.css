@@ -2991,19 +2991,20 @@ header .nice-select li {
 
 .header-layout1 .header-button ul li a {
     color: #08275a;
-    border: 2px solid rgba(8, 39, 90, 0.2);
-    width: 50px;
-    height: 50px;
+    /* border: 2px solid rgba(8, 39, 90, 0.2); */
+    width: 60px;
+    height: 30px;
     line-height: 48px;
     text-align: center;
-    border-radius: 50%
+    font-weight: 400;
+    /* border-radius: 50% */
 }
-
+/* 
 .header-layout1 .header-button ul li a:hover {
     color: #fff;
     background-color: #08275a;
     border-color: transparent
-}
+} */
 
 @media only screen and (max-width: 1800px) {
     .header-layout1 .header-logo {
@@ -3045,7 +3046,7 @@ header .nice-select li {
     .header-layout1 .header-logo {
         left: 15px;
         top: auto;
-        bottom: 9px;
+        bottom: 20px;
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
         transform: translateY(0)
@@ -3107,7 +3108,7 @@ header .nice-select li {
     }
 
     .header-layout1 .header-menu-wrap {
-        padding: 15px 0
+        padding: 10px 0
     }
 }
 
@@ -3350,7 +3351,7 @@ header .nice-select li {
     top: 0;
     width: 3px;
     height: 20px;
-    background-color: #11b4f5
+    background-color: #fff
 }
 
 .footer-layout1 .widget {
@@ -3373,7 +3374,7 @@ header .nice-select li {
 
 .footer-layout1 .widget ul li:before {
     content: '\f00c';
-    color: #11b4f5;
+    color: #fff;
     position: absolute;
     left: 0;
     top: 0
@@ -3471,7 +3472,7 @@ header .nice-select li {
     position: absolute;
     left: 0;
     top: 4px;
-    color: #11b4f5;
+    color: #fff;
     font-size: inherit
 }
 
@@ -3546,7 +3547,7 @@ header .nice-select li {
 }
 
 .footer-layout1[data-overlay="primary3"] a:hover {
-    color: #11b4f5 !important
+    color: #09285b !important
 }
 
 .footer-layout1[data-overlay="primary3"] .text-primary2 {
@@ -4399,7 +4400,7 @@ header .nice-select li {
 
 .sidemenu-wrapper .sidemenu-content {
     background-color: #fff;
-    width: 450px;
+    width: 380px;
     margin-left: auto;
     padding: 80px 30px;
     height: 100%;
@@ -4461,16 +4462,17 @@ header .nice-select li {
     margin-bottom: 0
 }
 
-.sidemenu-wrapper .sidemenu-content .widget_contact i {
+.sidemenu-wrapper .sidemenu-content .widget_contact i,svg {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
     font-size: 15px;
-    background-color: #11b4f5;
-    margin-right: 15px;
-    color: #fff;
+    /* background-color: #11b4f5; */
+    margin-right: 25px;
+    color: #000;
+    /* border: 1px solid #000; */
     border-radius: 50%;
     -webkit-transition: all ease 0.4s;
     transition: all ease 0.4s
@@ -6795,7 +6797,7 @@ header .nice-select li {
 
 .filter-nav-style1.nav-primary .indicator {
     color: #ffff;
-    background-color: #11b4f5
+    background-color: #66bb22
 }
 
 .filter-nav-style1.nav-primary2 .indicator {
@@ -7008,7 +7010,7 @@ header .nice-select li {
     }
 
     .filter-nav-style1.nav-primary button.active {
-        background-color: #11b4f5
+        background-color: #66bb22
     }
 
     .filter-nav-style1.nav-primary2 button.active {
@@ -10157,7 +10159,7 @@ header .nice-select li {
     }
 
     .vs-cart-wrapper .cart-table table {
-        min-width: 700px
+        min-width: 350px
     }
 
     .vs-cart-wrapper .vs-cart-summary {
@@ -10211,7 +10213,7 @@ header .nice-select li {
 
 .vs-checkout-area table td + td,
 .vs-checkout-area table th + th {
-    text-align: right
+    text-align: center
 }
 
 .vs-checkout-area .vs-checkout-submit label {
@@ -10688,7 +10690,7 @@ table.checkout-ordertable tfoot tr:last-child td {
 }
 
 [data-overlay="primary3"]::before {
-    background-color: #08275a
+    background-color: #439700
 }
 
 [data-overlay="secondary"]::before {
@@ -10951,7 +10953,8 @@ table.checkout-ordertable tfoot tr:last-child td {
 .background-image {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .background-image:before {

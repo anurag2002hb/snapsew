@@ -1,0 +1,360 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/style.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
+</head>
+<style>
+    .filterDiv {
+        float: left;
+        color: #ffffff;
+        /* width: 100px; */
+        line-height: 100px;
+        text-align: center;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<body>
+
+    
+    <%- include('../includes/t-navigation.ejs') %>
+
+    <!-- -------------------------- -->
+
+    
+    
+    <div class="breadcumb-wrapper breadcumb-layout1 background-image" data-vs-img="assets/img/breadcrumb/breadcumb-img-1.jpg" data-overlay="primary3" data-opacity="7">
+        <div class="container">
+            <div class="breadcumb-content py-100 py-lg-140">
+                <h1 class="breadcumb-title title1 text-white mb-0">Services</h1>
+                <ul class="bg-white text-primary3">
+                    <li><a href="products/html/clianio/demo/index.html">Home</a></li>
+                    <li class="active">Services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Control buttons -->
+   
+    <div class="col-xl-4 slick-slide slick-last " style="width: 468px;" tabindex="-1" data-slick-index="3" aria-hidden="true">
+        <div class="vs-price-table">
+            <div class="price-table-top">
+                <h3 class="package-name text-white">VIP</h3>
+                <div class="package-price text-white"><span class="price">199</span> <span>$/m</span></div>
+            </div>
+            <div class="package-icon"><span><i class="flaticon-offer icon-2x"></i></span></div>
+            <div class="package-features my-30 my-xl-40">
+                <ul>
+                    <li>20 Bedrooms cleaning</li>
+                    <li>Vacuuming</li>
+                    <li>20 Bathroom cleaning</li>
+                    <li>Window cleaning</li>
+                    <li>Floor cleaning</li>
+                </ul>
+            </div><a href="contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+        </div>
+    </div>
+
+    <!-- <section class="vs-price-table-wrapper price-table-layout1 pt-60 pt-lg-130 pb-30 pb-lg-100">
+        <div class="container">
+            <div class="row vs-carousel slick-initialized slick-slider" data-initialslide="1" data-slidetoshow="3" data-lgslidetoshow="2" data-mdslidetoshow="2" data-smslidetoshow="1" data-xsslidetoshow="1" data-centermode="true" data-xlcentermode="true" data-mlcentermode="true">
+                <div class="slick-list draggable" style="padding: 0px;">
+                    <div class="slick-track" style="opacity: 1; width: 5004px; transform: translate3d(-2502px, 0px, 0px);">
+                        <div class="col-xl-4 slick-slide slick-cloned" style="width: 417px;" data-slick-index="-4" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Basic</h3>
+                                    <div class="package-price text-white"><span class="price">79</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-cleaning icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>2 Bedrooms cleaning</li>
+                                        <li>Vacuuming</li>
+                                        <li>2 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned" style="width: 417px;" data-slick-index="-3" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Advanced</h3>
+                                    <div class="package-price text-white"><span class="price">99</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-liquid-soap icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>3 Bedrooms cleaning</li>
+                                        <li>All Vacuuming</li>
+                                        <li>4 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned slick-center-prev" style="width: 417px;" data-slick-index="-2" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Premium</h3>
+                                    <div class="package-price text-white"><span class="price">129</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-washing-machine icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>12 Bedrooms cleaning</li>
+                                        <li>All Vacuuming</li>
+                                        <li>12 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned slick-first slick-center slick-center-current" style="width: 417px;" data-slick-index="-1" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">VIP</h3>
+                                    <div class="package-price text-white"><span class="price">199</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-offer icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>20 Bedrooms cleaning</li>
+                                        <li>Vacuuming</li>
+                                        <li>20 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-first slick-center-next" style="width: 417px;" data-slick-index="0" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Basic</h3>
+                                    <div class="package-price text-white"><span class="price">79</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-cleaning icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>2 Bedrooms cleaning</li>
+                                        <li>Vacuuming</li>
+                                        <li>2 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-first" style="width: 417px;" data-slick-index="1" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Advanced</h3>
+                                    <div class="package-price text-white"><span class="price">99</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-liquid-soap icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>3 Bedrooms cleaning</li>
+                                        <li>All Vacuuming</li>
+                                        <li>4 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-active slick-center-prev slick-first" style="width: 417px;" data-slick-index="2" aria-hidden="false" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Premium</h3>
+                                    <div class="package-price text-white"><span class="price">129</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-washing-machine icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>12 Bedrooms cleaning</li>
+                                        <li>All Vacuuming</li>
+                                        <li>12 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="0"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-current slick-active slick-center slick-center-current" style="width: 417px;" data-slick-index="3" aria-hidden="false" tabindex="0">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">VIP</h3>
+                                    <div class="package-price text-white"><span class="price">199</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-offer icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>20 Bedrooms cleaning</li>
+                                        <li>Vacuuming</li>
+                                        <li>20 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="0"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned slick-active slick-center-next slick-last" style="width: 417px;" data-slick-index="4" aria-hidden="false" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Basic</h3>
+                                    <div class="package-price text-white"><span class="price">79</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-cleaning icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>2 Bedrooms cleaning</li>
+                                        <li>Vacuuming</li>
+                                        <li>2 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="0"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned" style="width: 417px;" data-slick-index="5" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Advanced</h3>
+                                    <div class="package-price text-white"><span class="price">99</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-liquid-soap icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>3 Bedrooms cleaning</li>
+                                        <li>All Vacuuming</li>
+                                        <li>4 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned" style="width: 417px;" data-slick-index="6" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">Premium</h3>
+                                    <div class="package-price text-white"><span class="price">129</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-washing-machine icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>12 Bedrooms cleaning</li>
+                                        <li>All Vacuuming</li>
+                                        <li>12 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 slick-slide slick-cloned" style="width: 417px;" data-slick-index="7" aria-hidden="true" tabindex="-1">
+                            <div class="vs-price-table">
+                                <div class="price-table-top">
+                                    <h3 class="package-name text-white">VIP</h3>
+                                    <div class="package-price text-white"><span class="price">199</span> <span>$/m</span></div>
+                                </div>
+                                <div class="package-icon"><span><i class="flaticon-offer icon-2x"></i></span></div>
+                                <div class="package-features my-30 my-xl-40">
+                                    <ul>
+                                        <li>20 Bedrooms cleaning</li>
+                                        <li>Vacuuming</li>
+                                        <li>20 Bathroom cleaning</li>
+                                        <li>Window cleaning</li>
+                                        <li>Floor cleaning</li>
+                                    </ul>
+                                </div><a href="http://vecurosoft.com/products/html/clianio/demo/contact.html" class="vs-btn style5 icon-none" tabindex="-1"><span class="btn-text">Submit Request</span><span class="btn-bg"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    
+    <%- include('../includes/t-footer.ejs') %>
+
+    <a href="#" class="scrollToTop bg-primary text-white border-primary"><i class="far fa-long-arrow-alt-up"></i></a>
+    <script src="/tailor/products/html/clianio/demo/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/app.min.js"></script>
+    <script src="maps/api/js_key_aizasydc3ip9ivc0nixc6v14cklq1hznf_65qeq.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/vscustom-carousel.min.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/vsmenu.min.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/ajaxmail.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/main.js"></script>
+
+    <script>
+        filterSelection("all")
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+</body></html>
+
+
+
+
+
+
+
+
+ 
