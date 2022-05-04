@@ -1,5 +1,33 @@
 const Product = require('../models/product');
 const Service = require('../models/service');
+const user = require('../models/user');
+const Order = require('../models/order');
+
+exports.getAdminOrders = (req, res, next) => {
+  Order.find()
+    .then(orders => {
+      // console.log(orders);
+      res.render('admin/orders', {
+        pageTitle: 'Admin Orders',
+        path: '/admin/add-orders',
+        orders: orders
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+exports.getUsers = (req, res, next) => {
+  user.find()
+    .then(users => {
+      console.log(users);
+      res.render('admin/users', {
+        pageTitle: 'Users',
+        path: '/admin/users',
+        users: users
+      });
+    })
+    .catch(err => console.log(err));
+};
 
 exports.getAddProduct = (req, res, next) => {
   res.render('admin/edit-product', {
@@ -93,15 +121,41 @@ exports.getProducts = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+
+exports.postAddress = (req, res, next) => {
+  const pin = req.body.pin;
+  const title = req.body.title;
+  user.find({ userId: req.user._id })
+    .then(user => {
+        console.log(user);
+    })
+};
+
+exports.getAddress = (req, res, next) => {
+  console.log('aur btao');
+  user.find({ userId: req.user._id })
+    .then(user => {
+        console.log(user);
+    })
+
+    user.updateOne(
+      {userId: req.user._id }, 
+      { age: -1 }, 
+      { runValidators: true }
+      )
+};
+
+
 exports.getAdminServices = (req, res, next) => {
-  
+  console.log(req.user.address);
   Service.find({ userId: req.user._id })
     .then(services => {
-      console.log(services);
+      
       res.render('tailor/precheckout', {
         servs: services,
         pageTitle: 'Admin Services',
-        path: '/admin/services'
+        path: '/admin/services',
+        banner: 'Pre-Checkout'
       });
     })
     .catch(err => console.log(err));
@@ -116,3 +170,4 @@ exports.postDeleteProduct = (req, res, next) => {
     })
     .catch(err => console.log(err));
 };
+

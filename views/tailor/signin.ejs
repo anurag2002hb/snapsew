@@ -1,17 +1,19 @@
 <%- include('../includes/t-head.ejs') %>
 
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/signin-style.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/signin-style.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
 </head>
 
 <body>
 
-    <%- include('../includes/t-navigation.ejs')%>
-
-    <div class="breadcumb-wrapper breadcumb-layout1 background-image" data-vs-img="assets/img/breadcrumb/breadcumb-img-1.jpg" data-overlay="primary3" data-opacity="7">
+    <%- include('../includes/t-navigation.ejs') %>
+    <%- include('../includes/banner.ejs') %>
+<!-- 
+    <div class="breadcumb-wrapper breadcumb-layout1 background-image"
+        data-vs-img="assets/img/breadcrumb/breadcumb-img-1.jpg" data-overlay="primary3" data-opacity="7">
         <div class="container">
             <div class="breadcumb-content py-100 py-lg-140">
                 <h1 class="breadcumb-title title1 text-white mb-0">Sign In</h1>
@@ -21,51 +23,45 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
 
-
+    
     <div class="login-wrapper py-60 py-lg-130">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
+                    <% if (errorMessage) { %>
+                        <div class="user-message user-message--error text-center fw-bold" > 
+                            <h3 class="text-danger"><%= errorMessage %></h3>
+                        </div>
+                    <% } %>
                     <form class="login-form input-style2 bg-secondary px-5 py-5" action="/login" method="POST">
                         <h2 class="form-title text-center mb-2 mb-lg-5">Sign in</h2>
                         <div class="form-group">
-                          <label for="email" class="sr-only">Username or email address*</label> 
-                          <input 
-                          class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %> form-control"
-                          type="email" 
-                          name="email" 
-                          id="email" 
-                          value="<%= oldInput.email %>"
-                          required=""
-                          placeholder="Username or email address*">
+                            <label for="email" class="sr-only">Username or email address*</label>
+                            <input
+                                class="<%= validationErrors.find(e => e.param === 'email') ? 'invalid' : '' %> form-control"
+                                type="email" name="email" id="email" value="<%= oldInput.email %>" required=""
+                                placeholder="Username or email address*">
                         </div>
                         <div class="form-group mb-3">
-                          <label for="password" class="sr-only">Password*</label> 
-                          <input 
-                          class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %> form-control"
-                          type="password" 
-                          name="password" 
-                          id="password" 
-                          value="<%= oldInput.password %>"
-                          placeholder="Password*">
+                            <label for="password" class="sr-only">Password*</label>
+                            <input
+                                class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %> form-control"
+                                type="password" name="password" id="password" value="<%= oldInput.password %>"
+                                placeholder="Password*">
                         </div>
-                        <!-- <div class="form-group">
-                          <input type="checkbox" name="loginRemember" id="loginRemember"> 
-                          <label for="loginRemember">Remember Me</label>
-                        </div> -->
                         <div class="form-group mb-0 text-center">
-                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                          <button class="vs-btn style3 icon-none w-100" type="submit">Login</button>
-                            <div class="bottom-links link-inherit d-md-flex justify-content-between mt-3"><a href="#" class="recovery-link mb-2 mb-md-0">Forgot your password?</a> <a href="/signup">Or Create Account</a></div>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button class="vs-btn style3 icon-none w-100" type="submit">Login</button>
+                            <div class="bottom-links link-inherit d-md-flex justify-content-between mt-3"><a href="#" class="recovery-link mb-2 mb-md-0">Forgot your password?</a> <a href="/tailor-sign-up">Or Create Account</a></div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <%- include('../includes/t-footer.ejs') %>
 
     <a href="#" class="scrollToTop bg-primary text-white border-primary"><i class="far fa-long-arrow-alt-up"></i></a>
@@ -76,9 +72,7 @@
     <script src="/tailor/products/html/clianio/demo/assets/js/vsmenu.min.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/ajaxmail.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/signin-main.js"></script>
-    
+
 </body>
 
 </html>
-
-<section class="vs-appointment-form bg-fixed bg-primary3 background-image pt-60 pt-lg-130 pb-60 pb-lg-130" data-vs-img="assets/img/bg-img/appoin-bg-1.jpg" data-overlay="primary3" data-opacity="8" id="contact" style="background-image: url(&quot;assets/img/bg-img/appoin-bg-1.jpg&quot;);"><div class="container position-relative"><form action="#" class="appointment-form input-style2"><div class="form-title text-center mb-30 mb-lg-60 mt-n2"><h2 class="h1 text-white"><strong>Make an Appoinment</strong></h2></div><div class="row"><div class="form-group col-sm-6 col-lg-4"><input type="text" class="form-control" placeholder="Enter Your Name"> <i class="fal fa-user"></i></div><div class="form-group col-sm-6 col-lg-4"><input type="email" class="form-control" placeholder="Enter Your Email"> <i class="fal fa-envelope"></i></div><div class="form-group col-sm-6 col-lg-4"><input type="number" class="form-control" placeholder="Enter Your Phone"> <i class="fal fa-phone-alt"></i></div><div class="form-group col-sm-6 col-lg-4 select-box"><select style="display: none;"><option>Select Category</option><option>House Cleaning</option><option>Kitchen Cleaning</option><option>Bathroom Cleaning</option><option>Shop Cleaning</option><option>Floor Cleaning</option></select><div class="nice-select" tabindex="0"><span class="current">Select Category</span><ul class="list"><li data-value="Select Category" class="option selected">Select Category</li><li data-value="House Cleaning" class="option">House Cleaning</li><li data-value="Kitchen Cleaning" class="option">Kitchen Cleaning</li><li data-value="Bathroom Cleaning" class="option">Bathroom Cleaning</li><li data-value="Shop Cleaning" class="option">Shop Cleaning</li><li data-value="Floor Cleaning" class="option">Floor Cleaning</li></ul></div></div><div class="form-group col-sm-6 col-lg-4"><input type="text" class="form-control" placeholder="Property Address"> <i class="fal fa-map-marker-alt"></i></div><div class="form-group col-sm-6 col-lg-4"><input type="text" class="form-control date-pick" placeholder="mm/dd/yy"> <i class="fal fa-calendar-alt"></i></div><div class="form-button col-12 text-center"><button type="submit" class="vs-btn style3"><span class="btn-text">Confirm Appointment<i class="fal fa-arrow-right"></i></span><span class="btn-bg" style="top: -3.5499px; left: 24.8125px;"></span></button></div></div></form></div></section>

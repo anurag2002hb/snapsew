@@ -41,14 +41,27 @@ const orderSchema = new Schema({
       ref: 'User'
     }
   },
-  pincode: {
-    type: Number,
-    required: true
+  name: {
+    type: String
   },
-  add: {
-    type: String,
-    required: true
-  }
+  phone: {
+    type: Number
+  },
+  landmark: {
+    type: String
+  },
+  city: {
+    type: String
+  },
+  pincode: {
+    type: Number
+  },
+  address: {
+    type: String
+  },
+  optionalPhone: {
+    type: Number
+  },
 });
 
 module.exports = mongoose.model('Order', orderSchema);

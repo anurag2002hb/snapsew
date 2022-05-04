@@ -1,0 +1,132 @@
+<%- include('../includes/t-head.ejs') %>
+
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/style.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
+</head>
+
+<body>
+	<%- include('../includes/t-navigation.ejs') %>
+	<%- include('../includes/banner.ejs') %>
+	
+	<div class="vs-faq-wrapper vs-faq-layout1 pb-40 pb-lg-110 pt-60 pt-lg-130">
+		<div class="container">
+			<div class="row">
+				<% if (orders.length <= 0) { %>
+							<h1>Nothing there!</h1>
+				<% } else { %>
+					
+				<div class="col-lg-12">
+					<div class="faq-accordion-area" id="faqAccordion">
+
+						
+						<% orders.forEach(order => { %>
+
+						<div class="faq-card open">
+
+								<% order.services.forEach(p => { %>
+
+							<div class="faq-card-header" id="faqOne"><button class="faq-question" type="button" data-toggle="collapse"
+									data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Product: <%= p.service.object %>  </button></div>
+
+							<div id="collapseOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
+								<div class="faq-card-body">
+									
+									<div class="container">
+										<div class="row">
+											<div class="col-6">
+												<p class="m-0"> <b> Order-id: </b> <span class="text-end"><%= order._id %></span> </p>
+												
+											</div>
+											<div class="col-6">
+												<p class="m-0"> <b>Extra Message : </b> <span class="text-end"><%= p.service.p9 %></span> </p>
+											</div>
+										</div>
+										<hr>
+										<div class="row">
+												<div class="col-12 col-sm-6 col-lg-4">
+													<%= p.service.p1 %> <br>
+													<%= p.service.p2 %> <br>
+													<%= p.service.p3%> <br>
+												</div>
+												<div class="col-12 col-sm-6 col-lg-4">
+													<%= p.service.p4 %> <br>
+													<%= p.service.p5 %> <br>
+													<% if(p.service.p6 !== 'nothing here') { %>
+														<%= p.service.p6 %> <br>
+													<% } %>
+												</div>
+												<div class="col-12 col-sm-6 col-lg-4">
+													<b>Pick-up Date</b> - <%= p.service.p7 %> <br>
+													<b>Plan</b>	- <%= p.service.p8 %> <br>
+													<!-- <b></b>	<%= p.service.p9 %> <br> -->
+												</div>
+										</div>
+									</div>
+									<!-- <table class="table table-borderless">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">First</th>
+												<th scope="col">Last</th>
+												<th scope="col">Handle</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">1</th>
+												<td>p.service.p1 %></td>
+												<td>Otto</td>
+												<td>@mdo</td>
+											</tr>
+											<tr>
+												<th scope="row">2</th>
+												<td>Jacob</td>
+												<td>Thornton</td>
+												<td>@fat</td>
+											</tr>
+											<tr>
+												<th scope="row">3</th>
+												<td colspan="2">Larry the Bird</td>
+												<td>@twitter</td>
+											</tr>
+										</tbody>
+									</table> -->
+								</div>
+							</div>
+							
+							<% }); %>
+						</div>
+
+						<% }); %>
+
+
+					</div>
+				</div>
+				
+				<% } %>
+			</div>
+		</div>
+	</div>
+
+	
+	<%- include('../includes/t-footer.ejs') %>
+
+	<a href="#" class="scrollToTop bg-primary text-white border-primary"><i
+			class="far fa-long-arrow-alt-up"></i></a>
+			<script src="/tailor/products/html/clianio/demo/assets/js/vendor/jquery-1.12.4.min.js"></script>
+			<script src="/tailor/products/html/clianio/demo/assets/js/app.min.js"></script>
+			<script src="maps/api/js_key_aizasydc3ip9ivc0nixc6v14cklq1hznf_65qeq.js"></script>
+			<script src="/tailor/products/html/clianio/demo/assets/js/vscustom-carousel.min.js"></script>
+			<script src="/tailor/products/html/clianio/demo/assets/js/vsmenu.min.js"></script>
+			<script src="/tailor/products/html/clianio/demo/assets/js/ajaxmail.js"></script>
+			<script src="/tailor/products/html/clianio/demo/assets/js/main.js"></script>
+	
+</body>
+
+</html>

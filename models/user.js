@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   password: {
     type: String,
@@ -36,30 +37,52 @@ const userSchema = new Schema({
       }
     ]
   },
-  // address: {
-  //   adds: [
-  //     {
-  //       pincode: {
-  //         type: Number,
-  //         required: true
-  //       },
-  //       add: {
-  //         type: String,
-  //         required: true
-  //       },
-  //     }
-  //   ]
-  // }
   address: {
-    pincode: {
-      type: Number,
-      required: true
-    },
-    add: {
-      type: String,
-      required: true
-    }
+    adds: [
+      {
+        // name: {
+        //   type: String
+        // },
+        // phone: {
+        //   type: Number
+        // },
+        // landmark: {
+        //   type: String
+        // },
+        // city: {
+        //   type: String
+        // },
+
+        pincode: {
+          type: Number
+        },
+        add: {
+          type: String
+        }
+      }
+    ]
   }
+  // address: {
+  //   name: {
+  //     type: String
+  //   },
+  //   phone: {
+  //     type: Number
+  //   },
+  //   landmark: {
+  //     type: String
+  //   },
+  //   city: {
+  //     type: String
+  //   },
+
+  //   pincode: {
+  //     type: Number
+  //   },
+  //   add: {
+  //     type: String
+  //   }
+  // }
   
 });
 
@@ -127,6 +150,14 @@ userSchema.methods.removeFromCart = function(productId) {
     return item.productId.toString() !== productId.toString();
   });
   this.cart.items = updatedCartItems;
+  return this.save();
+};
+
+userSchema.methods.removeFromBasket = function(serviceId) {
+  const updatedBasketThings = this.basket.things.filter(thing => {
+    return thing.serviceId.toString() !== serviceId.toString();
+  });
+  this.basket.things = updatedBasketThings;
   return this.save();
 };
 

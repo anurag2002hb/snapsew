@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Wizard V1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/ajax/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/animate.min.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/fontawesome-all.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/tailor/blouse-form/themes/css/colors/switch.css">
+	<!-- Color Alternatives -->
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+</head>
+<body>
+	<div class="clearfix"></div>
+	<div class="wrapper">
+		<div class="steps-area steps-area-fixed">
+			<div class="image-holder">
+				<img src="/tailor/blouse-form/themes/img/hu.jpg" alt="">
+			</div>
+			<div class="steps clearfix">
+				<ul class="tablist multisteps-form__progress">
+					<li class="multisteps-form__progress-btn js-active current">
+						<span>1</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>2</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>3</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>4</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>5</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>6</span>
+					</li>
+					<li class="multisteps-form__progress-btn last">
+						<span>7</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<form class="multisteps-form__form" action="/add-common-service" id="wizard" method="POST">
+			<div class="form-area position-relative">
+				<!-- div 1 -->
+				<div class="multisteps-form__panel js-active" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no">Step 1</span>
+									<h2>Style</h2>
+									<div class="step-box">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position active" for="p1">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_15.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" id="front-neck-1" name="p1" value="front-neck-1" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_16.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" id="front-neck-2" name="p1" value="front-neck-2"  required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_17.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" id="front-neck-3" name="p1" value="front-neck-3" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_18.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" id="front-neck-4" name="p1" value="front-neck-4" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_19.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" id="front-neck-5" name="p1" value="front-neck-5" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_20.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" id="front-neck-7" name="p1" value="front-neck-7" required></span>
+													</span>
+												</label>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.inner -->
+						<div class="actions">
+							<ul>
+								<li class="disable" aria-disabled="true"><span class="js-btn-next" title="NEXT">Backward <i class="fa fa-arrow-right"></i></span></li>
+								<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<!-- div 2 -->
+				<div class="multisteps-form__panel" data-animation="slideHorz">
+					<div class="wizard-forms">
+
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no">Step 2</span>
+									<h2>Select The Front Neck of Blouse</h2>
+									<div class="step-box">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position active">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_21.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-1" value="back-neck-1" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_22.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-2" value="back-neck-2" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_23.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-3" value="back-neck-3" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_24.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-4" value="back-neck-4" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_25.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-5" value="back-neck-5" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_26.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-6" value="back-neck-6" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_27.jpg" alt="">
+													</span>
+													<span class="service-check-option"> 
+														<span><input type="radio" name="p2" id="back-neck-7" value="back-neck-7" checked="" required></span>
+													</span>
+												</label>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- div 3 -->
+				<div class="multisteps-form__panel" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no">Step 3</span>
+									<h2>Select The Back Neck of Your Blouse</h2>
+									<div class="step-box">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position active">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_28.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-1" value="sleeve-1" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_29.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-2" value="sleeve-2" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_30.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-3" value="sleeve-3" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_31.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-4" value="sleeve-4" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_32.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-5" value="sleeve-5" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_33.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-7" value="sleeve-7" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_34.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-8" value="sleeve-8" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_35.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p3" id="sleeve-9" value="sleeve-9" checked=""></span>
+													</span>
+												</label>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ./inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- div 4 -->
+				<div class="multisteps-form__panel" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no">Step 4</span>
+									<h2>Select The Style of Sleeve</h2>
+									<p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+									<div class="step-box">
+										<div class="row">
+											<div class="col-md-4">
+												<label class="step-box-content bg-white text-center relative-position active">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_36.jpg" alt="">
+													</span>
+													<span class="step-box-text">
+														Front Placket
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p4" id="sleeve-frontPlacket" value="sleeve-frontPlacket" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-4">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_37.jpg" alt="">
+													</span>
+													<span class="step-box-text">
+														Front Placket
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p4" id="sleeve-frontPlacket" value="sleeve-frontPlacket" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-4">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_38.jpg" alt="">
+													</span>
+													<span class="step-box-text">
+														Front Placket
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p4" id="sleeve-frontPlacket" value="sleeve-frontPlacket" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-4">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_39.jpg" alt="">
+													</span>
+													<span class="step-box-text">
+														Front Placket
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p4" id="sleeve-frontPlacket" value="sleeve-frontPlacket" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-4">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_40.jpg" alt="">
+													</span>
+													<span class="step-box-text">
+														Front Placket
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p4" id="sleeve-frontPlacket" value="sleeve-frontPlacket" checked=""></span>
+													</span>
+												</label>
+											</div>
+											
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ./inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- div 5 -->
+				<div class="multisteps-form__panel" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no">Step 5</span>
+									<h2>Select The Style of Opening</h2>
+									<div class="step-box">
+										<div class="row">
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position active">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_15.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p5" id="cups-1" value="cups-1" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_16.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p5" id="cups-2" value="cups-2" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_17.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p5" id="cups-3" value="cups-3" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_18.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p5" id="cups-4" value="cups-4" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_19.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p5" id="cups-5" value="cups-5" checked=""></span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-3">
+												<label class="step-box-content bg-white text-center relative-position">
+													<span class="step-box-icon">
+														<img src="/tailor/blouse-form/themes/img-blouse/Screenshot_20.jpg" alt="">
+													</span>
+													<span class="service-check-option">
+														<span><input type="radio" name="p5" id="cups-6" value="cups-6" checked=""></span>
+													</span>
+												</label>
+											</div>
+
+											
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ./inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- div 6 -->
+				
+				<!-- div 7 -->
+				<div class="multisteps-form__panel" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no bottom-line">Step 7</span>
+									<div class="step-progress float-right">
+										<span>7 of 7 completed</span>
+										<div class="step-progress-bar">
+											<div class="progress">
+												<div class="progress-bar" style="width:100%"></div>
+											</div>
+										</div>
+									</div>
+									<h2>Complete Final Step</h2>
+									<h3 style="padding-top: 20px;">What Time Do You Want To Submit Your Fabric To Our Delivery Boy.</h3>
+									<div class="step-content-field">
+										<div class="date-picker date datepicker">
+											<input type="text" name="p7" id="addDate" class="form-control">
+											<div class="input-group-append"><span>ADD DATE</span></div>
+										</div>
+										<div class="plan-area">
+											<div class="plan-icon-text text-center active">
+												<div class="plan-icon">
+													<i class="fas fa-chess-queen"></i>
+												</div>
+												<div class="plan-text">
+													<h3>Premium Plan</h3>
+													<p>Get Your Product Only In 3 Working Days ( From The Submission Of Fabric )</p>
+													<input type="radio" name="p8" value="premiumPlan" id="premiumPlan" checked="">
+												</div>
+											</div>
+											<div class="plan-icon-text text-center">
+												<div class="plan-icon">
+													<i class="fas fa-cubes"></i>
+												</div>
+												<div class="plan-text">
+													<h3>Basic Plan</h3>
+													<p>Your Product Will Be Delivered in 3 to 8 Days (From The Submission Of Fabric )</p>
+													<input type="radio" name="p8" value="basicPlan" id="basicPlan">
+												</div> 
+											</div>
+										</div>
+										<div class="budget-area">
+											<p>Any Special Request </p>
+											<!-- <div class="opti-list">
+												<ul class="d-flex">
+													<li class="bg-white active"><input type="checkbox" name="code_opti1" value="Semantic coding" checked="">Semantic coding</li>
+													<li class="bg-white"><input type="checkbox" name="code_opti2" value="Mobile APP">Mobile APP</li>
+													<li class="bg-white"><input type="checkbox" name="code_opti3" value="Mobile Design">Mobile Design</li>
+												</ul>
+											</div> -->
+										</div>
+										<div class="comment-box">
+											<textarea name="p9" id="extraMessage" placeholder="Extra Message"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li>
+									<input type="hidden" name="object" value="blouse">
+									<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+									<button type="submit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="/tailor/blouse-form/themes/js/jquery-3.3.1.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/jquery.validate.min.js"></script>
+	<script src="/tailor/blouse-form/ajax/js/bootstrap-datepicker.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/bootstrap.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/conditionize.flexible.jquery.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/main.js"></script>
+	<script src="/tailor/blouse-form/themes/js/switch.js"></script>
+	<script>
+		$("#files").change(function() {
+			filename = this.files[0].name
+			// console.log(filename);
+		});
+		function UploadFile() {
+			var reader = new FileReader();
+			var file = document.getElementById('attach').files[0];
+			reader.onload = function() {
+				document.getElementById('fileContent').value = reader.result;
+				document.getElementById('filename').value = file.name;
+				document.getElementById('wizard').submit();
+			}
+			reader.readAsDataURL(file);
+		}
+		$(document).ready(function() {
+			$('.conditional').conditionize();
+		});
+	</script>
+</body>
+</html>

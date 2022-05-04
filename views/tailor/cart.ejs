@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/style.css">
     <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -22,79 +23,151 @@
         </div>
     </div>
 
-
+    <% if (services.length > 0) { %>
+    <% let count = 0 %>
+    <% services.forEach(p => { %>  
 
     <div class="vs-cart-wrapper py-60 py-lg-130">
         <div class="container">
             <div class="cart-table table-responsive">
                 <table class="table table-bordered mb-0">
                     <thead>
-                        <tr>
-                            <th class="cart-col-image" scope="col">Image</th>
-                            <th class="cart-col-productname" scope="col">Object</th>
-                            <th class="cart-col-price" scope="col">Property</th>
-                            <!-- <th class="cart-col-quantity" scope="col">Quantity</th> -->
-                            <th class="cart-col-total" scope="col">Total</th>
+                        <tr class="bg-light">
+                            <th class="cart-col-price px-5" scope="col">Stitching Item</th>
+                            <th class="cart-col-productname" scope="col">Plan</th>
+                            <th class="cart-col-total" scope="col">Price</th>
+                            <th class="cart-col-remove px-5" scope="col">View Detail</th> 
                             <th class="cart-col-remove" scope="col">Remove</th> 
                         </tr>
                     </thead>
                     <tbody>
-                        <% if (services.length > 0) { %>
-                        <% services.forEach(p => { %>   
+                         
                         <tr>
-                            
-                            <% console.log(p.serviceId.object); %>
-                            <td>
-                                <a href="index.html" class="cart-productimage">
-                                    <img src="/tailor/products/html/clianio/demo/assets/img-tailor/cart/cart-img-1.jpg" alt="product image">
-                                </a>
-                            </td>
+                           
+                            <% console.log(count); %>
+
                             <td>
                                 <a href="index.html" class="cart-productname"><%= p.serviceId.object %></a>
                             </td>
                             <td>
                                 <a href="index.html" class="cart-productname">
                                     <%= p.serviceId.p8 %> 
-                                    
                                 </a>
                             </td>
-                            <td>
-                                <a href="index.html" class="cart-productname">
-                                    <%= p.serviceId.p7 %> 
-                                    
-                                </a>
-                            </td>
-                            <!-- <td class="cart-price">
+                            <td class="cart-price">
                                 $800.00
                             </td>
                             <td>
-                                <span class="cart-totalprice">
-                                    $800.00
-                                </span>
-                            </td>-->
+                                
+                                <% let lila = 'collapseExample' + count; %>
+                                <% console.log(lila); %>
+
+                                    <!-- <button class="btn btn-outline-primary mx-5" type="button" data-bs-toggle="collapse" data-bs-target="#<%= lila %> %>" aria-expanded="false" aria-controls="<%= lila %>">
+                                      Button
+                                    </button> -->
+                                    <a class="" data-bs-toggle="collapse" href="#<%= lila %>" role="button" aria-expanded="false" aria-controls="<%= lila %>">
+                                        Click Here
+                                      </a>
+                                  </p>
+                                  <div class="collapse" id="<%= lila %>">
+                                    <div class="container">
+                                        <div class="row text-center">
+                                            <% if(p.serviceId.p1 != undefined){ %>
+                                            <% console.log(p.serviceId.object) %>
+                                            <div class="col-12 col-lg-4">
+                                                <div class="card vs-service">
+                                                    <div class="card-body servic p-0e-header">
+                                                        <img src="/tailor/products/html/clianio/demo/assets/img-tailor/precheck/<%= p.serviceId.object %>/<%= p.serviceId.p1 %>.jpg"
+                                                            class="img-fluid" alt="..." style="height: 100px;">
+                                                        <p class="card-ti"><%= p.serviceId.p1 %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            <% if(p.serviceId.p2 != undefined){ %>
+                                            <div class="col-12 col-lg-4 ">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <img src="/tailor/products/html/clianio/demo/assets/img-tailor/precheck/<%= p.serviceId.object %>/<%= p.serviceId.p2 %>.jpg"
+                                                            class="img-fluid" alt="..." style="height: 100px;">
+                                                        <p class="pt-lg-2"><%= p.serviceId.p2 %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            <% if(p.serviceId.p3 != undefined){ %>
+                                            <div class="col-12 col-lg-4 ">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <img src="/tailor/products/html/clianio/demo/assets/img-tailor/precheck/<%= p.serviceId.object %>/<%= p.serviceId.p3 %>.jpg"
+                                                            class="img-fluid" alt="..." style="height: 100px;">
+                                                        <p class="pt-lg-2"><%= p.serviceId.p3 %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            <% if(p.serviceId.p4 != undefined){ %>
+                                            <div class="col-12 col-lg-4 ">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <img src="/tailor/products/html/clianio/demo/assets/img-tailor/precheck/<%= p.serviceId.object %>/<%= p.serviceId.p4 %>.jpg"
+                                                            class="img-fluid" alt="..." style="height: 100px;">
+                                                        <p class="pt-lg-2"><%= p.serviceId.p4 %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            <% if(p.serviceId.p5 != undefined){ %>
+                                            <div class="col-12 col-lg-4 ">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <img src="/tailor/products/html/clianio/demo/assets/img-tailor/precheck/<%= p.serviceId.object %>/<%= p.serviceId.p5 %>.jpg"
+                                                            class="img-fluid" alt="..." style="height: 100px;">
+                                                        <p class="pt-lg-2"><%= p.serviceId.p5 %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            <% if(p.serviceId.p6 != undefined){ %>
+                                            <div class="col-12 col-lg-4 ">
+                                                <div class="card">
+                                                    <div class="card-body p-0">
+                                                        <img src="/tailor/products/html/clianio/demo/assets/img-tailor/precheck/<%= p.serviceId.object %>/<%= p.serviceId.p6 %>.jpg"
+                                                        
+                                                            class="img-fluid" alt="..." style="height: 100px;">
+                                                        <p class="pt-lg-2"><%= p.serviceId.p6 %></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                            
+                                
+                                        </div>
+                                    </div>
+                                
+                                  </div>
+                            </td>
                             <td>
-                                <form action="/delete-service" method="POST">
-                                    <input type="hidden" value="<%= p._id %>" name="serviceId">
+                                <form action="/delete-basket-service" method="POST">
+                                    <input type="hidden" value="<%= p.serviceId._id %>" name="serviceId">
                                     <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                    <button class="cart-removeproduct" type="submit"><i class="fas fa-times"></i></button>
+                                    <button class="cart-removeproduct" type="submit"><i class="bi bi-trash"></i></button>
                                 </form>
                                 
                             </td> 
                             
+                            
                         </tr>
-                        <% }) %>
-
-                        <% } else { %>
-                            <h1>No Products in Cart!</h1>
-                        <% } %>
-
+                        
                         <tr>
+                            
                             <td colspan="6" class="actions">
                                 <!-- <form action="#" class="vs-cart-coupon">
                                     <label for="coupon-field" class="sr-only">Have a coupon code?</label> <input class="form-control" type="text" id="coupon-field" placeholder="Enter coupon code" required="required"> 
                                     <button type="submit" class="vs-btn style3">Submit</button>
                                 </form> -->
-                                <a href="index.html" class="vs-btn style3 mb-2 mb-md-0">Continue Shopping</a> <a href="#" class="vs-btn style3">Update Cart</a>
+                                <a href="/tailor-products" class="vs-btn style3 mb-2 mb-md-0">Continue Shopping</a> 
+                                <!-- <a href="#" class="vs-btn style3">Update Cart</a> -->
                             </td>
                         </tr>
                     </tbody>
@@ -126,10 +199,23 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
+
+            
         </div>
     </div>
     
+    <% count++ %>
+    <% }) %>
+
+    <% } else { %>
+        <h1 class="m-5  text-center">No Products in Cart!</h1>
+        <div class="text-center">
+            <a href="/tailor-products" class="vs-btn style3 mb-5 px-3 py-2  text-center">Continue Shopping</a> 
+        </div>
+        
+    <% } %>
 
 
     
@@ -179,9 +265,8 @@
     <script src="/tailor/products/html/clianio/demo/assets/js/vsmenu.min.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/ajaxmail.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/main.js"></script>
-    <center>
-        <font size="2">This is the free demo result. For a full version of this website, please go to <a href="https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/">https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/</a></font>
-    </center>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

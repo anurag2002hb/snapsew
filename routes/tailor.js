@@ -11,18 +11,20 @@ const router = express.Router();
 router.post('/create-checkout-service', isAuth, tailorController.postChekoutService);
 
 
-router.get('/checkout', tailorController.getCheckout);
+router.get('/checkout', isAuth, tailorController.getCheckout);
 
 
-router.get('/addres', tailorController.getAddres);
+router.get('/addres', isAuth, tailorController.getAddres);
 
-router.post('/addres', tailorController.postAddres);
+router.post('/addres', isAuth, tailorController.postAddres);
 
-router.get('/tailor-cart', tailorController.getTailorCart);
+router.get('/tailor-cart', isAuth, tailorController.getTailorCart);
 
-router.get('/tailor-orders', tailorController.getTailorOrders);
+router.get('/tailor-orders', isAuth, tailorController.getTailorOrders);
 
-router.get('/precheckout', tailorController.getPreCheckout);
+router.get('/check-tailor-orders', isAuth, tailorController.getMyTailorOrders);
+
+router.get('/precheckout', isAuth, tailorController.getPreCheckout);
 
 // //////////////
 
@@ -30,7 +32,9 @@ router.get('/precheckout', tailorController.getPreCheckout);
 
 // router.post('/edit-product', isAuth, adminController.postEditProduct);
 
-router.post('/delete-service', isAuth, tailorController.postDeleteService);
+router.post('/delete-service', isAuth, isAuth, tailorController.postDeleteService);
+
+router.post('/delete-basket-service', isAuth, isAuth, tailorController.postBasketDeleteService);
 
 // //////////////
 
@@ -53,18 +57,24 @@ router.post('/delete-service', isAuth, tailorController.postDeleteService);
 
 // router.get('/home', shopController.getHome);
 
-router.get('/tailor', tailorController.getTailor);
+router.get('/', tailorController.getTailor);
 
-router.get('/tailor-basket', tailorController.getTailorBasket);
+router.get('/tailor-basket', isAuth, tailorController.getTailorBasket);
 
 router.get('/tailor-sign-in', tailorController.getTailorSignIn);
+
+router.get('/tailor-sign-up', tailorController.getTailorSignUp);
 
 router.get('/tailor-products', tailorController.getTailorProducts);
 
 // //////////////////////////////various products///////////////////////
 
 
-router.post('/add-common-service', isAuth, tailorController.postCommonCustomization);
+//router.post('/add-common-service', isAuth, tailorController.postCommonCustomization);
+
+router.post('/add-shirt-service', isAuth, tailorController.postShirtCustomization);
+
+router.post('/add-blouse-service', isAuth, tailorController.postBlouseCustomization);
 
 // men
 

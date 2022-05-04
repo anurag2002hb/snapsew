@@ -11,10 +11,14 @@
                 <ul class="orders">
                     <% orders.forEach(order => { %>
                         <li class="orders__item">
-                            <h1>Order - # <%= order._id %></h1>
+                            
+                            <% order.services.forEach(p => { %>
+                                <!-- <li class="orders__products-item"><%= p.service.p8 %> (<%= p.service.p9 %>)</li> -->
+                                <h1>Product:  <%= p.service.p8 %>   Order - # </h1>
+                            <% }); %>
                             <ul class="orders__products">
                                 <% order.services.forEach(p => { %>
-                                    <li class="orders__products-item"><%= p.service.p8 %> (<%= p.service.p9 %>)</li>
+                                    <li class="orders__products-item"><%= order._id %> (<%= p.service.p9 %>)</li>
                                 <% }); %>
                             </ul>
                         </li>

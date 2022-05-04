@@ -10,34 +10,44 @@ const serviceSchema = new Schema({
     ref: 'User'
   },
   p1: {
-    type: String
+    type: String,
+    required: true
   },
   p2: {
-    type: String
+    type: String,
+    required: true
   },
   p3: {
-    type: String
+    type: String,
+    required: true
   },
   p4: {
-    type: String
+    type: String,
+    required: true
   },
   p5: {
-    type: String
+    type: String,
+    required: true
   },
   p6: {
-    type: String
+    type: String,
+    required: true
   },
   p7: {
-    type: String
+    type: String,
+    required: true
   },
   p8: {
-    type: String
+    type: String,
+    required: true
   },
   p9: {
-    type: String
+    type: String,
+    required: true
   },
   object: {
-    type: String
+    type: String,
+    required: true
   }
 });
 

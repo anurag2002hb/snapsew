@@ -1,12 +1,24 @@
-const Product = require('../models/product');
 const Service = require('../models/service');
 const Order = require('../models/order');
 const User = require('../models/user');
-
+const service = require('../models/service');
+const crypto = require('crypto');
+const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+const { validationResult } = require('express-validator/check');
 
 exports.postChekoutService = (req, res, next) => {
-  const pin = req.body.pin;
-  const title = req.body.title;
+  const name = req.body.name;
+  const phone = req.body.phone;
+  const landmark = req.body.landmark;
+  const city = req.body.city;
+  const pincode = req.body.pincode;
+  const address = req.body.address;
+  const optionalPhone = req.body.optionalPhone;
+
+  // const pin = req.body.pin;
+  // const title = req.body.title;
 
   req.user
     .populate('basket.things.serviceId')
@@ -21,8 +33,15 @@ exports.postChekoutService = (req, res, next) => {
           userId: req.user
         },
         services: services,
-        pincode: pin,
-        add: title,
+
+        name: name,
+        phone: phone,
+        landmark: landmark,
+        city: city,
+        pincode: pincode,
+        address: address,
+        optionalPhone: optionalPhone,
+
       });
       return order.save();
     })
@@ -30,31 +49,30 @@ exports.postChekoutService = (req, res, next) => {
       return req.user.clearBasket();
     })
     .then(() => {
-      res.redirect('/tailor-orders');
+      res.redirect('/check-tailor-orders');
     })
     .catch(err => console.log(err));
 };
 
 exports.getPreCheckout = (req, res, next) => {
-  console.log(req.user);
   res.render('tailor/precheckout', {
         pageTitle: 'Pre Checkout',
-        path: '/products'
+        path: '/products',
+        banner: 'Pre-Checkout'
       })
 };
 
 exports.getAddres = (req, res, next) => {
-  console.log(req.user.address.pincode);
   res.render('tailor/addres', {
         pageTitle: 'addres',
-        path: '/products'
+        path: '/products',
+        banner: 'Pre-Checkout'
       })
 };
 
+
 exports.postAddres = (req, res, next) => {
-  // console.log(req.user.cart);
   const userId = req.user._id
-// //////////////////////////////////
   const pin = req.body.pin;
   const title = req.body.title;
   console.log(userId);
@@ -73,23 +91,49 @@ exports.postAddres = (req, res, next) => {
 };
 
 
+exports.getMyTailorOrders = (req, res, next) => {
+  Order.find({ 'user.userId': req.user._id })
+    .then(orders => {
+      res.render('tailor/tailor-orders', {
+        path: '/orders',
+        pageTitle: 'Tailors Orders',
+        orders: orders,
+        banner: 'Orders'
+      });
+    })
+    .catch(err => console.log(err));
+};
+
 exports.getTailorOrders = (req, res, next) => {
   Order.find({ 'user.userId': req.user._id })
     .then(orders => {
       res.render('tailor/orders', {
         path: '/orders',
         pageTitle: 'Your Orders',
-        orders: orders
+        orders: orders,
+        banner: 'Orders'
       });
     })
     .catch(err => console.log(err));
 };
 
 exports.getCheckout = (req, res, next) => {
-  res.render('tailor/checko', {
-        pageTitle: 'Checko',
-        path: '/products'
-      })
+  console.log('what the fuck is going on here');
+
+    req.user
+  .populate('basket.things.serviceId')
+  .execPopulate()
+  .then(user => {
+    const services = user.basket.things;
+    res.render('tailor/c', {
+      path: '/basket',
+      pageTitle: 'Your Basket',
+      services: services,
+      banner: 'Checkout'
+    });
+  })
+  .catch(err => console.log(err));
+
 };
 
 exports.getTailorCart = (req, res, next) => {
@@ -98,10 +142,12 @@ exports.getTailorCart = (req, res, next) => {
   .execPopulate()
   .then(user => {
     const services = user.basket.things;
+    console.log(services);
     res.render('tailor/cart', {
       path: '/basket',
       pageTitle: 'Your Basket',
-      services: services
+      services: services,
+      banner: 'Cart'
     });
   })
   .catch(err => console.log(err));
@@ -109,7 +155,6 @@ exports.getTailorCart = (req, res, next) => {
 
 
 exports.getTailor = (req, res, next) => {
-  
   res.render('tailor/check', {
         pageTitle: 'All Products',
         path: '/products'
@@ -119,14 +164,16 @@ exports.getTailor = (req, res, next) => {
 exports.getTailorBasket = (req, res, next) => {
   res.render('tailor/my-basket', {
         pageTitle: 'All Products',
-        path: '/products'
+        path: '/products',
+        banner: 'Cart'
       })
 };
 
 exports.getTailorProducts = (req, res, next) => {
   res.render('tailor/tailor-products', {
         pageTitle: 'All Products',
-        path: '/products'
+        path: '/products',
+        banner: 'Services'
       })
 };
 
@@ -141,28 +188,81 @@ exports.postDeleteService = (req, res, next) => {
 };
 
 
-
-exports.getTailorSignIn = (req, res, next) => {
-  res.render('tailor/signin', {
-        pageTitle: 'Sign',
-        path: '/products'
-      })
-};
-
-exports.getCart = (req, res, next) => {
+exports.postCartDeleteProduct = (req, res, next) => {
+  const prodId = req.body.productId;
   req.user
-    .populate('cart.items.productId')
-    .execPopulate()
-    .then(user => {
-      const products = user.cart.items;
-      res.render('shop/cart', {
-        path: '/cart',
-        pageTitle: 'Your Cart',
-        products: products
-      });
+    .removeFromCart(prodId)
+    .then(result => {
+      res.redirect('/cart');
     })
     .catch(err => console.log(err));
 };
+
+exports.postBasketDeleteService = (req, res, next) => {
+  const servId = req.body.serviceId;
+  req.user
+    .removeFromBasket(servId)
+    .then(result => {
+      res.redirect('/tailor-cart');
+    })
+    .catch(err => console.log(err));
+};
+
+exports.getTailorSignIn = (req, res, next) => {
+  let message = req.flash('error');
+  if(message.length > 0){
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render('tailor/signin', {
+        pageTitle: 'Sign',
+        path: '/products',
+        banner: 'Sign-in',
+        errorMessage: message,
+        oldInput: {
+          email: '',
+          password: ''
+        },
+        validationErrors: []
+      });
+};
+
+exports.getTailorSignUp = (req, res, next) => {
+  let message = req.flash('error');
+  if(message.length > 0){
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render('tailor/signup', {
+    path: '/signup',
+    pageTitle: 'Signup',
+    banner: 'Sign-up',
+    errorMessage: message,
+    oldInput: {
+      email: '',
+      password: '',
+      confirmPassword: ''
+    },
+    validationErrors: []
+  });
+};
+
+// exports.getCart = (req, res, next) => {
+//   req.user
+//     .populate('cart.items.productId')
+//     .execPopulate()
+//     .then(user => {
+//       const products = user.cart.items;
+//       res.render('shop/cart', {
+//         path: '/cart',
+//         pageTitle: 'Your Cart',
+//         products: products
+//       });
+//     })
+//     .catch(err => console.log(err));
+// };
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -178,7 +278,7 @@ exports.getPantCustomization = (req, res, next) => {
 };
 
 exports.getShirtCustomization = (req, res, next) => {
-  res.render('tailor/common-form', {
+  res.render('services/common-form', {
     pageTitle: 'Common Customization',
     path: '/admin/add-product',
     editing: false
@@ -186,13 +286,14 @@ exports.getShirtCustomization = (req, res, next) => {
 };
 
 
-exports.postCommonCustomization = (req, res, next) => {
+exports.postShirtCustomization = (req, res, next) => {
   const p1 = req.body.p1;
   const p2 = req.body.p2;
   const p3 = req.body.p3;
   const p4 = req.body.p4;
   const p5 = req.body.p5;
   const p6 = req.body.p6;
+
   const p7 = req.body.p7;
   const p8 = req.body.p8;
   const p9 = req.body.p9;
@@ -221,6 +322,77 @@ exports.postCommonCustomization = (req, res, next) => {
     });
 };
 
+exports.postBlouseCustomization = (req, res, next) => {
+  const p1 = req.body.p1;
+  const p2 = req.body.p2;
+  const p3 = req.body.p3;
+  const p4 = req.body.p4;
+  const p5 = req.body.p5;
+  const p6 = 'nothing here';
+  
+  const p7 = req.body.p7;
+  const p8 = req.body.p8;
+  const p9 = req.body.p9;
+  const object = req.body.object;
+  const service = new Service({
+    userId: req.user,
+     p1: p1,
+     p2: p2,
+     p3: p3,
+     p4: p4,
+     p5: p5,
+     p6: p6,
+     p7: p7,
+     p8: p8,
+     p9: p9,
+     object: object
+  });
+  service
+    .save()
+    .then(result => {
+      console.log('Created Service');
+      res.redirect('/admin/services');
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+// exports.postCommonCustomization = (req, res, next) => {
+//   const p1 = req.body.p1;
+//   const p2 = req.body.p2;
+//   const p3 = req.body.p3;
+//   const p4 = req.body.p4;
+//   const p5 = req.body.p5;
+//   const p6 = req.body.p6;
+//   const p7 = req.body.p7;
+//   const p8 = req.body.p8;
+//   const p9 = req.body.p9;
+//   const object = req.body.object;
+//   const service = new Service({
+//     userId: req.user,
+//      p1: p1,
+//      p2: p2,
+//      p3: p3,
+//      p4: p4,
+//      p5: p5,
+//      p6: p6,
+//      p7: p7,
+//      p8: p8,
+//      p9: p9,
+//      object: object
+//   });
+//   service
+//     .save()
+//     .then(result => {
+//       console.log('Created Service');
+//       res.redirect('/admin/services');
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// };
+
 
 exports.getKurtaCustomization = (req, res, next) => {
   res.render('tailor/common-form2', {
@@ -240,7 +412,7 @@ exports.getPajamaCustomization = (req, res, next) => {
 
 
 exports.getBlouseCustomization = (req, res, next) => {
-  res.render('tailor/common-form2', {
+  res.render('services/common-form2', {
     pageTitle: 'Blouse Stitching',
     path: '/admin/add-product',
     editing: false
@@ -271,4 +443,3 @@ exports.getSalwarSuitCustomization = (req, res, next) => {
     editing: false
   });
 };
-

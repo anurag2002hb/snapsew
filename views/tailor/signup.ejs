@@ -1,39 +1,50 @@
 <%- include('../includes/t-head.ejs') %>
 
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/style.css">
-    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/style.css">
+<link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
 </head>
 
 <body>
-    
-    <%- include('../includes/t-navigation.ejs') %>
 
-    <div class="breadcumb-wrapper breadcumb-layout1 background-image" data-vs-img="assets/img/breadcrumb/breadcumb-img-1.jpg" data-overlay="primary3" data-opacity="7">
-        <div class="container">
-            <div class="breadcumb-content py-100 py-lg-140">
-                <h1 class="breadcumb-title title1 text-white mb-0">Sign Up</h1>
-                <ul class="bg-white text-primary3">
-                    <li><a href="products/html/clianio/demo/index.html">Home</a></li>
-                    <li class="active">Sign Up</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <%- include('../includes/t-navigation.ejs') %>
+    <%- include('../includes/banner.ejs') %>
+    
     <div class="signup-wrapper py-60 py-lg-150">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <form action="#" class="signup-form bg-secondary input-style2 px-5 py-5">
+                    <% if (errorMessage) { %>
+                        <div class="user-message user-message--error text-center fw-bold" > 
+                            <h3 class="text-danger"><%= errorMessage %></h3>
+                        </div>
+                    <% } %>
+                    <form action="/signup" method="POST" class="signup-form bg-secondary input-style2 px-5 py-5">
                         <h2 class="form-title text-center mb-2 mb-lg-5">Create an account</h2>
-                        <div class="form-group"><label for="signUpUserName" class="sr-only">Username</label> <input type="text" class="form-control" placeholder="Username*" id="signUpUserName" name="signUpUserName" required=""></div>
-                        <div class="form-group"><label for="signUpUserEmail" class="sr-only">Email address</label> <input type="text" class="form-control" placeholder="Email address*" id="signUpUserEmail" name="signUpUserEmail" required=""></div>
-                        <div class="form-group mb-3"><label for="signUpUserPass" class="sr-only">Password</label> <input type="password" class="form-control" placeholder="Password*" id="signUpUserPass" name="signUpUserPass" required=""></div>
-                        <!-- <div class="form-group"><input type="checkbox" name="signUpTerms" id="signUpTerms"> <label for="signUpTerms">I have read and agree to the website terms and conditions</label></div> -->
-                        <div class="form-group mb-0 text-center"><button class="vs-btn style3 icon-none w-100" type="submit">Register</button>
-                            <div class="bottom-links link-inherit pt-3"><span>Already have account? <a class="text-theme" href="/signin">Sign in</a></span></div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email </label>
+                            <input type="email" class="form-control <%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>" placeholder="Email*" id="email" name="email" value="<%= oldInput.email %>" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="sr-only">Password </label>
+                            <input type="password" class="form-control <%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>" placeholder="Password*" id="password" name="password" value="<%= oldInput.password %>" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword" class="sr-only">Confirm Password* </label>
+                            <input type="password" class="form-control <%= validationErrors.find(e => e.param === 'confirmPassword') ? 'invalid' : '' %>" placeholder="Confirm Password*" id="confirmPassword" name="confirmPassword" value="<%= oldInput.confirmPassword %>" required="">
+                        </div>
+                        <div class="form-group mb-0 text-center">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <!-- <button class="btn" type="submit">Signup</button> -->
+                            <button class="vs-btn style3 icon-none w-100" type="submit">Sign-up</button>
+                            <div class="bottom-links link-inherit pt-3">
+                                <span>Already have account? 
+                                    <a class="text-theme" href="/tailor-sign-in">Sign in</a>
+                                </span>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -45,8 +56,11 @@
     <div class="sidemenu-wrapper d-none d-lg-block">
         <div class="sidemenu-content"><button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
             <div class="widget widget_about">
-                <div class="vs-about"><a href="products/html/clianio/demo/index.html"><img src="/tailor/products/html/clianio/demo/assets/img/logo.png" alt="Clianio"></a>
-                    <p class="about-text mb-0">Quickly recaptiualize real-time interfaces and timely models. Proactively exploit viral meta-services for interdependent customer service. Dynamically actualize bleeding-edge internal</p>
+                <div class="vs-about"><a href="products/html/clianio/demo/index.html"><img
+                            src="/tailor/products/html/clianio/demo/assets/img/logo.png" alt="Clianio"></a>
+                    <p class="about-text mb-0">Quickly recaptiualize real-time interfaces and timely models. Proactively
+                        exploit viral meta-services for interdependent customer service. Dynamically actualize
+                        bleeding-edge internal</p>
                 </div>
             </div>
             <div class="widget widget_contact">
@@ -60,25 +74,38 @@
                 <h3 class="widget_title">Recent News</h3>
                 <div class="vs-recent-post">
                     <div class="recent-post">
-                        <div class="post-img"><img src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-1.jpg" alt="Recent Post Image"></div>
-                        <div class="post-content"><a href="index.html">Collaboratively excellent based networks.</a> <span><i class="fal fa-calendar-alt"></i>20 June, 2020</span></div>
+                        <div class="post-img"><img
+                                src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-1.jpg"
+                                alt="Recent Post Image"></div>
+                        <div class="post-content"><a href="index.html">Collaboratively excellent based networks.</a>
+                            <span><i class="fal fa-calendar-alt"></i>20 June, 2020</span></div>
                     </div>
                     <div class="recent-post">
-                        <div class="post-img"><img src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-2.jpg" alt="Recent Post Image"></div>
-                        <div class="post-content"><a href="index.html">Assertively visualize best-of-breed .</a> <span><i class="fal fa-calendar-alt"></i>20 March, 2020</span></div>
+                        <div class="post-img"><img
+                                src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-2.jpg"
+                                alt="Recent Post Image"></div>
+                        <div class="post-content"><a href="index.html">Assertively visualize best-of-breed .</a>
+                            <span><i class="fal fa-calendar-alt"></i>20 March, 2020</span></div>
                     </div>
                     <div class="recent-post">
-                        <div class="post-img"><img src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-3.jpg" alt="Recent Post Image"></div>
-                        <div class="post-content"><a href="index.html">Conveniently engage optimal leadership.</a> <span><i class="fal fa-calendar-alt"></i>20 July, 2020</span></div>
+                        <div class="post-img"><img
+                                src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-3.jpg"
+                                alt="Recent Post Image"></div>
+                        <div class="post-content"><a href="index.html">Conveniently engage optimal leadership.</a>
+                            <span><i class="fal fa-calendar-alt"></i>20 July, 2020</span></div>
                     </div>
                     <div class="recent-post">
-                        <div class="post-img"><img src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-4.jpg" alt="Recent Post Image"></div>
-                        <div class="post-content"><a href="index.html">Objectively e-business applications.</a> <span><i class="fal fa-calendar-alt"></i>26 Augest, 2020</span></div>
+                        <div class="post-img"><img
+                                src="/tailor/products/html/clianio/demo/assets/img/widget/post-thumb-4.jpg"
+                                alt="Recent Post Image"></div>
+                        <div class="post-content"><a href="index.html">Objectively e-business applications.</a> <span><i
+                                    class="fal fa-calendar-alt"></i>26 Augest, 2020</span></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><a href="#" class="scrollToTop bg-primary text-white border-primary"><i class="far fa-long-arrow-alt-up"></i></a>
+    </div><a href="#" class="scrollToTop bg-primary text-white border-primary"><i
+            class="far fa-long-arrow-alt-up"></i></a>
     <script src="/tailor/products/html/clianio/demo/assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/app.min.js"></script>
     <script src="maps/api/js_key_aizasydc3ip9ivc0nixc6v14cklq1hznf_65qeq.js"></script>
@@ -86,9 +113,6 @@
     <script src="/tailor/products/html/clianio/demo/assets/js/vsmenu.min.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/ajaxmail.js"></script>
     <script src="/tailor/products/html/clianio/demo/assets/js/main.js"></script>
-    <center>
-        <font size="2">This is the free demo result. For a full version of this website, please go to <a href="https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/">https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/</a></font>
-    </center>
 </body>
 
 </html>
