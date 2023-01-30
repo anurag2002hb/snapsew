@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= pageTitle %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/ajax/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/animate.min.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/fontawesome-all.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/tailor/blouse-form/themes/css/colors/switch.css">
+	<!-- Color Alternatives -->
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+</head>
+<body>
+	<!-- This code is use for color chooser, you can delete -->
+	<div class="clearfix"></div>
+	<div class="wrapper">
+		<div class="steps-area steps-area-fixed">
+			<div class="image-holder">
+				<img src="/tailor/blouse-form/themes/standart-shirt/v.jpg" alt="">
+			</div>
+			<div class="steps clearfix">
+				<ul class="tablist multisteps-form__progress "><!--
+					 <li class="multisteps-form__progress-btn js-active last current">
+						<span>1</span>
+					</li>
+					<li class="multisteps-form__progress-btn last">
+						<span>2</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>3</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>4</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>5</span>
+					</li> 
+					<li class="multisteps-form__progress-btn">
+						<span>6</span>
+					</li>
+					<li class="multisteps-form__progress-btn last">
+						<span>7</span>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<form class="multisteps-form__form" action="/add-shirt-service" id="wizard" method="POST">
+			<div class="form-area position-relative">
+				
+				<!-- div 7 -->
+				<div class="multisteps-form__panel js-active" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<!-- <span class="step-no bottom-line">Step 2</span> 
+									<div class="step-progress float-right">
+										<span>2 of 2 completed</span>
+										<div class="step-progress-bar">
+											<div class="progress">
+												<div class="progress-bar" style="width:100%"></div>
+											</div>
+										</div>
+									</div>-->
+									<h2>Complete Final Step</h2>
+									<h3 style="padding-top: 20px;">What Time Do You Want To Submit Your Fabric To Our Delivery Boy.</h3>
+									<div class="step-content-field">
+										<div class="date-picker date datepicker">
+											<input type="text" name="p7" id="addDate" class="form-control" required>
+											<div class="input-group-append"><span>ADD DATE</span></div>
+										</div>
+										<div class="plan-area">
+											<div class="plan-icon-text text-center active">
+												<div class="plan-icon">
+													<i class="fas fa-chess-queen"></i>
+												</div>
+												<div class="plan-text">
+													<h3>Premium Plan</h3>
+													<p>Get Your Product Only In 3 Working Days ( From The Submission Of Fabric )</p>
+													<input type="radio" name="p8" value="premiumPlan" id="premiumPlan" checked="" required>
+												</div>
+											</div>
+											<div class="plan-icon-text text-center">
+												<div class="plan-icon">
+													<i class="fas fa-cubes"></i>
+												</div>
+												<div class="plan-text">
+													<h3>Basic Plan</h3>
+													<p>Your Product Will Be Delivered in 3 to 8 Days (From The Submission Of Fabric )</p>
+													<input type="radio" name="p8" value="basicPlan" id="basicPlan" required>
+												</div> 
+											</div>
+										</div>
+										<div class="budget-area">
+											<p>Any Special Request </p>
+										</div>
+										<div class="comment-box">
+											<textarea name="p9" id="extraMessage" placeholder="Extra Message"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li>
+									<input type="hidden" name="object" value="shirt">
+                  <input type="hidden" id="collor-colAnglais" name="p1" value=" " checked="" required>
+                  <input type="hidden" name="p2" id="frontLook-slim" value=" " required="required">
+                  <input type="hidden" name="p3" id="backLook-italian" value=" " checked="" required>
+                  <input type="hidden" name="p4" id="placket-frontPlacket" value=" " checked="" required>
+                  <input type="hidden" name="p5" id="cuff-oneButton" value=" " required>
+                  <input type="hidden" name="p6" id="pocket-noPocket" value=" " checked="">
+									<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+									<button type="submit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="/tailor/blouse-form/themes/js/jquery-3.3.1.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/jquery.validate.min.js"></script>
+	<script src="/tailor/blouse-form/ajax/js/bootstrap-datepicker.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/bootstrap.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/conditionize.flexible.jquery.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/main.js"></script>
+	<script src="/tailor/blouse-form/themes/js/switch.js"></script>
+	<script>
+		$("#files").change(function() {
+			filename = this.files[0].name
+			// console.log(filename);
+		});
+		function UploadFile() {
+			var reader = new FileReader();
+			var file = document.getElementById('attach').files[0];
+			reader.onload = function() {
+				document.getElementById('fileContent').value = reader.result;
+				document.getElementById('filename').value = file.name;
+				document.getElementById('wizard').submit();
+			}
+			reader.readAsDataURL(file);
+		}
+		$(document).ready(function() {
+			$('.conditional').conditionize();
+		});
+	</script>
+</body>
+</html>
+

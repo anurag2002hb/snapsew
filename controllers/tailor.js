@@ -394,6 +394,30 @@ exports.postBlouseCustomization = (req, res, next) => {
 // };
 
 
+exports.getStandardShirtCustomization = (req, res, next) => {
+  res.render('services/standard-shirt', {
+    pageTitle: 'Standard Shirt Stitching',
+    path: '/admin/add-product',
+    editing: false
+  });
+};
+
+exports.getStandardPage = (req, res, next) => {
+  res.render('tailor/selector', {
+    pageTitle: 'Standard Selector',
+    path: '/admin/add-product',
+    editing: false
+  });
+};
+
+exports.getSamplePage = (req, res, next) => {
+  res.render('services/sample-form', {
+    pageTitle: 'Sample ',
+    path: '/admin/add-product',
+    editing: false
+  });
+};
+
 exports.getKurtaCustomization = (req, res, next) => {
   res.render('tailor/common-form2', {
     pageTitle: 'Kurta Stitching',
@@ -412,7 +436,7 @@ exports.getPajamaCustomization = (req, res, next) => {
 
 
 exports.getBlouseCustomization = (req, res, next) => {
-  res.render('services/common-form2', {
+  res.render('services/blouse-form', {
     pageTitle: 'Blouse Stitching',
     path: '/admin/add-product',
     editing: false

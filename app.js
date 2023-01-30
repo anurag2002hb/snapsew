@@ -88,8 +88,11 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(process.env.PORT || 3212);
+    app.listen(process.env.PORT || 3219);
   })
   .catch(err => {
     console.log(err);
   });
+
+  
+    // "start": "NODE_ENV=production MONGO_USER=amongo2002 MONGO_PASSWORD=16143758 MONGO_DEFAULT_DATABASE=test node app.js",

@@ -1,0 +1,149 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/app.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/flaticon.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/style.css">
+    <link rel="stylesheet" href="/tailor/products/html/clianio/demo/assets/css/spacing.min.css">
+</head>
+<style>
+    .filterDiv {
+        float: left;
+        color: #ffffff;
+        /* width: 100px; */
+        line-height: 100px;
+        text-align: center;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<body>
+
+    
+    <%- include('../includes/t-navigation.ejs') %>
+
+    <!-- -------------------------- -->
+
+    
+    
+    <div class="breadcumb-wrapper breadcumb-layout1 background-image" data-vs-img="assets/img/breadcrumb/breadcumb-img-1.jpg" data-overlay="primary3" data-opacity="7">
+        <div class="container">
+            <div class="breadcumb-content py-100 py-lg-140">
+                <h1 class="breadcumb-title title1 text-white mb-0">Services For Shirt</h1>
+                <ul class="bg-white text-primary3">
+                    <li><a href="products/html/clianio/demo/index.html">Home</a></li>
+                    <li class="active">Services</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <section class="vs-team-wrapper vs-team-layout2 pt-60 pt-lg-130 pb-30 pb-lg-100">
+        <div class="container">
+            
+            <div class="row justify-content-center ">
+                <div class="col-sm-6 col-lg-3 col-xs-6 filterDiv women">
+                    <a href="/add-standard-shirt-service">
+                        <div class="vs-team-member">
+                            <div class="member-img"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/img3.png" alt="Team Member"></div>
+                            <div class="member-content text-center border-primary">
+
+                                <h3 class="member-name heading4 mb-0 text-primary3" style="padding-bottom: 20px;"><a href="/add-standard-shirt-service">Standard Shirt</a></h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+               
+                <div class="col-sm-6 col-lg-3 col-xs-6 filterDiv man">
+                    <a href="/add-kurta-service">
+                        <div class="vs-team-member">
+                            <div class="member-img"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/img4.png" alt="Team Member"></div>
+                            <div class="member-content text-center border-primary">
+
+                                <h3 class="member-name heading4 mb-0 text-primary3" style="padding-bottom: 20px;">
+                                    <a href="/add-kurta-service">Provide Sample</a></h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-xs-6 filterDiv man">
+                    <a href="/add-shirt-service">
+                        <div class="vs-team-member">
+                            <div class="member-img"><img src="/tailor/products/html/clianio/demo/assets/img-tailor/anu/ima.png" alt="Team Member"></div>
+                            <div class="member-content text-center border-primary">
+
+                                <h3 class="member-name heading4 mb-0 text-primary3" style="padding-bottom: 20px;">
+                                    <a href="/add-shirt-service">Customize Stitching</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../includes/t-footer.ejs') %>
+
+    <a href="#" class="scrollToTop bg-primary text-white border-primary"><i class="far fa-long-arrow-alt-up"></i></a>
+    <script src="/tailor/products/html/clianio/demo/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/app.min.js"></script>
+    <script src="maps/api/js_key_aizasydc3ip9ivc0nixc6v14cklq1hznf_65qeq.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/vscustom-carousel.min.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/vsmenu.min.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/ajaxmail.js"></script>
+    <script src="/tailor/products/html/clianio/demo/assets/js/main.js"></script>
+
+    <script>
+        filterSelection("all")
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+</body></html>

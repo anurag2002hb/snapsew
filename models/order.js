@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-// const { INTEGER } = require('sequelize/types');
-
 const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
@@ -9,27 +7,6 @@ const orderSchema = new Schema({
       service: { type: Object, required: true, ref: 'Service' }
     }
   ],
-  // address: {
-  //   fullName: {
-  //     type: String
-  //   },
-  //   phoneNo: {
-  //     type: INTEGER
-  //   },
-  //   pincode: {
-  //     type: INTEGER
-  //   },
-  //   flat: {
-  //     type: String
-  //   },
-  //   building: {
-  //     type: String
-  //   },
-  //   address: {
-  //     type: String
-  //   }
-
-  // },
   user: {
     email: {
       type: String,

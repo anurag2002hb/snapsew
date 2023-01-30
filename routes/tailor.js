@@ -10,9 +10,7 @@ const router = express.Router();
 // /tailor/products => GET
 router.post('/create-checkout-service', isAuth, tailorController.postChekoutService);
 
-
 router.get('/checkout', isAuth, tailorController.getCheckout);
-
 
 router.get('/addres', isAuth, tailorController.getAddres);
 
@@ -67,11 +65,6 @@ router.get('/tailor-sign-up', tailorController.getTailorSignUp);
 
 router.get('/tailor-products', tailorController.getTailorProducts);
 
-// //////////////////////////////various products///////////////////////
-
-
-//router.post('/add-common-service', isAuth, tailorController.postCommonCustomization);
-
 router.post('/add-shirt-service', isAuth, tailorController.postShirtCustomization);
 
 router.post('/add-blouse-service', isAuth, tailorController.postBlouseCustomization);
@@ -79,6 +72,12 @@ router.post('/add-blouse-service', isAuth, tailorController.postBlouseCustomizat
 // men
 
 router.get('/add-shirt-service', isAuth, tailorController.getShirtCustomization);
+
+router.get('/standard-page', isAuth, tailorController.getStandardPage);
+
+router.get('/sample-page', isAuth, tailorController.getSamplePage);
+
+router.get('/add-standard-shirt-service', isAuth, tailorController.getStandardShirtCustomization);
 
 router.get('/add-pant-service', isAuth, tailorController.getPantCustomization);
 
@@ -95,8 +94,5 @@ router.get('/add-gown-service', isAuth, tailorController.getGownCustomization);
 router.get('/add-kurti-service', isAuth, tailorController.getKurtiCustomization);
 
 router.get('/add-salwar-suit-service', isAuth, tailorController.getSalwarSuitCustomization);
-
-
-
 
 module.exports = router;

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title><%= pageTitle %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/tailor/clianio/demo/assets/css/app.min.css">
+    <link rel="stylesheet" href="/tailor/clianio/demo/assets/css/flaticon.min.css">
+    <link rel="stylesheet" href="/tailor/clianio/demo/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/tailor/clianio/demo/assets/css/style.css">
+    <link rel="stylesheet" href="/tailor/clianio/demo/assets/css/spacing.min.css">
+
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/ajax/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/animate.min.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/fontawesome-all.css">
+	<link rel="stylesheet" href="/tailor/blouse-form/themes/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/tailor/blouse-form/themes/css/colors/switch.css">
+	<!-- Color Alternatives -->
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+	<link href="/tailor/blouse-form//tailor/blouse-form/themes/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+</head>
+<body>
+	<!-- This code is use for color chooser, you can delete -->
+	<div class="clearfix"></div>
+	<div class="wrapper">
+		<div class="steps-area steps-area-fixed">
+			<div class="image-holder">
+				<img src="/tailor/blouse-form/themes/standart-shirt/v.jpg" alt="">
+			</div>
+			<div class="steps clearfix">
+				<ul class="tablist multisteps-form__progress">
+					 <li class="multisteps-form__progress-btn js-active current">
+						<span>1</span>
+					</li>
+					<li class="multisteps-form__progress-btn last">
+						<span>2</span>
+					</li><!--
+					<li class="multisteps-form__progress-btn">
+						<span>3</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>4</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>5</span>
+					</li> 
+					<li class="multisteps-form__progress-btn">
+						<span>6</span>
+					</li>
+					<li class="multisteps-form__progress-btn last">
+						<span>7</span>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<form class="multisteps-form__form" action="/add-shirt-service" id="wizard" method="POST">
+			<div class="form-area position-relative">
+					<!-- div 1 -->
+          <div class="multisteps-form__panel js-active" data-animation="slideHorz">
+            <div class="wizard-forms">
+              <div class="inner pb-100 clearfix">
+                <div class="form-content pera-content">
+                  <div class="step-inner-content">
+                    <span class="step-no"></span>
+                    <h2>Different views of shirt</h2>
+                    <div class="step-box">
+                       <div class="row">
+
+                        <!--<div class="col-md-3">
+                          <label class="step-box-content bg-white text-center relative-position active" for="p1">
+                            <div class="geeks">
+                              <img src="/tailor/blouse-form/themes/standart-shirt/v1.jpg" alt="">
+                            </div>
+                            
+                          </label>
+                        </div>
+                        <div class="col-md-3">
+                          <label class="step-box-content bg-white text-center relative-position active" for="p1">
+                            <img src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="">
+                          </label>
+                        </div>
+                        <div class="col-md-3">
+                          <label class="step-box-content bg-white text-center relative-position active" for="p1">
+                            <img src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="">
+                          </label>
+                        </div>
+                        <div class="col-md-3">
+                          <label class="step-box-content bg-white text-center relative-position active" for="p1">
+                            <img src="/tailor/blouse-form/themes/standart-shirt/v4.jpg" alt="">
+                          </label>
+                        </div> -->
+
+                        
+                        
+                    <div class="col-lg-6">
+                    	<div
+                    		class="product-img px-1 vs-carousel slick-dots-white arrow-white slick-initialized slick-slider"
+                    		id="productSlide" data-asnavfor="#thumbSlide" data-fade="true" data-slidetoshow="1"
+                    		data-arrows="true" data-dots-color="primary3">
+                    		<div class="slick-list draggable">
+                    			<div class="slick-track" style="opacity: 1; width: 4074px;">
+                    				<div class="slick-last slick-first slick-slide"
+                    					style="width: 582px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0;"
+                    					tabindex="-1" data-slick-index="0" aria-hidden="true">
+                    					
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v1.jpg" alt="Food Image" class="w-100"></div>
+                    				<div class="slick-last slick-first slick-slide"
+                    					style="width: 582px; position: relative; left: -582px; top: 0px; z-index: 998; opacity: 0;"
+                    					tabindex="-1" data-slick-index="1" aria-hidden="true">
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Food Image" class="w-100"></div>
+                    				<div class="slick-last slick-first slick-slide"
+                    					style="width: 582px; position: relative; left: -1164px; top: 0px; z-index: 998; opacity: 0; transition: opacity 1000ms ease 0s;"
+                    					tabindex="-1" data-slick-index="2" aria-hidden="true">
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="Food Image" class="w-100"></div>
+                    				<div class="slick-slide slick-last slick-first"
+                    					style="width: 582px; position: relative; left: -1746px; top: 0px; z-index: 998; opacity: 0; transition: opacity 1000ms ease 0s;"
+                    					tabindex="-1" data-slick-index="3" aria-hidden="true">
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v4.jpg" alt="Food Image" class="w-100"></div>
+                    				<div class="slick-slide slick-last slick-first"
+                    					style="width: 582px; position: relative; left: -2328px; top: 0px; z-index: 998; opacity: 0; transition: opacity 1000ms ease 0s;"
+                    					tabindex="-1" data-slick-index="4" aria-hidden="true">
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v1.jpg" alt="Food Image" class="w-100"></div>
+                    				<div class="slick-slide slick-current slick-active slick-last slick-first"
+                    					style="width: 582px; position: relative; left: -2910px; top: 0px; z-index: 999; opacity: 1;"
+                    					tabindex="0" data-slick-index="5" aria-hidden="false">
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Food Image" class="w-100"></div>
+                    				<div class="slick-last slick-first slick-slide"
+                    					style="width: 582px; position: relative; left: -3492px; top: 0px; z-index: 998; opacity: 0;"
+                    					tabindex="-1" data-slick-index="6" aria-hidden="true">
+                    					<img src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="Food Image" class="w-100"></div>
+                    			</div>
+                    		</div>
+                    	</div>
+                    	<div class="product-thumb pt-2 vs-carousel slick-initialized slick-slider" data-slidetoshow="5"
+                    		data-mdslidetoshow="4" data-smslidetoshow="3" data-xsslidetoshow="3" id="thumbSlide"
+                    		data-asnavfor="#productSlide">
+                    		<div class="slick-list draggable">
+                    			<div class="slick-track"
+                    				style="opacity: 1; width: 2242px; transform: translate3d(-1180px, 0px, 0px);">
+                    				<div class="thumb px-1 slick-first slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="-5" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-cloned" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="-4" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v4.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-last slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="-3" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v1.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-last slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="-2" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-first slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="-1" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-first slick-slide" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="0" aria-hidden="true"><img src="/tailor/blouse-form/themes/standart-shirt/v1.jpg"
+                    						alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-first slick-slide" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="1" aria-hidden="true"><img src="/tailor/blouse-form/themes/standart-shirt/v2.jpg"
+                    						alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-first" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="2" aria-hidden="true"><img src="/tailor/blouse-form/themes/standart-shirt/v3.jpg"
+                    						alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-first" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="3" aria-hidden="true"><img src="/tailor/blouse-form/themes/standart-shirt/v4.jpg"
+                    						alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-first" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="4" aria-hidden="true"><img src="/tailor/blouse-form/themes/standart-shirt/v1.jpg"
+                    						alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-current slick-active slick-first"
+                    					style="width: 118px;" tabindex="0" data-slick-index="5" aria-hidden="false"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-active" style="width: 118px;" tabindex="0"
+                    					data-slick-index="6" aria-hidden="false"><img src="/tailor/blouse-form/themes/standart-shirt/v3.jpg"
+                    						alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-cloned slick-active" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="7" id="" aria-hidden="false"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v1.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-cloned slick-active" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="8" id="" aria-hidden="false"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-cloned slick-active slick-last"
+                    					style="width: 118px;" tabindex="-1" data-slick-index="9" id="" aria-hidden="false"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-slide slick-cloned" style="width: 118px;" tabindex="-1"
+                    					data-slick-index="10" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v4.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-last slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="11" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-last slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="12" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v2.jpg" alt="Thumb Image"></div>
+                    				<div class="thumb px-1 slick-first slick-slide slick-cloned" style="width: 118px;"
+                    					tabindex="-1" data-slick-index="13" id="" aria-hidden="true"><img
+                    						src="/tailor/blouse-form/themes/standart-shirt/v3.jpg" alt="Thumb Image"></div>
+                    			</div>
+                    		</div>
+                    	</div>
+                    </div>
+										</div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+              <!-- /.inner -->
+              <div class="actions">
+                <ul>
+                  <li class="disable" aria-disabled="true"><span class="js-btn-next" title="NEXT">Backward <i class="fa fa-arrow-right"></i></span></li>
+                  <li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+				
+				
+				
+				<!-- div 7 -->
+				<div class="multisteps-form__panel" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<span class="step-no bottom-line">Step 2</span>
+									<div class="step-progress float-right">
+										<span>2 of 2 completed</span>
+										<div class="step-progress-bar">
+											<div class="progress">
+												<div class="progress-bar" style="width:100%"></div>
+											</div>
+										</div>
+									</div>
+									<h2>Complete Final Step</h2>
+									<h3 style="padding-top: 20px;">What Time Do You Want To Submit Your Fabric To Our Delivery Boy.</h3>
+									<div class="step-content-field">
+										<div class="date-picker date datepicker">
+											<input type="text" name="p7" id="addDate" class="form-control" required>
+											<div class="input-group-append"><span>ADD DATE</span></div>
+										</div>
+										<div class="plan-area">
+											<div class="plan-icon-text text-center active">
+												<div class="plan-icon">
+													<i class="fas fa-chess-queen"></i>
+												</div>
+												<div class="plan-text">
+													<h3>Premium Plan</h3>
+													<p>Get Your Product Only In 3 Working Days ( From The Submission Of Fabric )</p>
+													<input type="radio" name="p8" value="premiumPlan" id="premiumPlan" checked="" required>
+												</div>
+											</div>
+											<div class="plan-icon-text text-center">
+												<div class="plan-icon">
+													<i class="fas fa-cubes"></i>
+												</div>
+												<div class="plan-text">
+													<h3>Basic Plan</h3>
+													<p>Your Product Will Be Delivered in 3 to 8 Days (From The Submission Of Fabric )</p>
+													<input type="radio" name="p8" value="basicPlan" id="basicPlan" required>
+												</div> 
+											</div>
+										</div>
+										<div class="budget-area">
+											<p>Any Special Request </p>
+										</div>
+										<div class="comment-box">
+											<textarea name="p9" id="extraMessage" placeholder="Extra Message"></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /.inner -->
+						<div class="actions">
+							<ul>
+								<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+								<li>
+									<input type="hidden" name="object" value="shirt">
+                  <input type="hidden" id="collor-colAnglais" name="p1" value="collor-colAnglais" checked="" required>
+                  <input type="hidden" name="p2" id="frontLook-slim" value="frontLook-slim" required="required">
+                  <input type="hidden" name="p3" id="backLook-italian" value="backLook-italian" checked="" required>
+                  <input type="hidden" name="p4" id="placket-frontPlacket" value="placket-frontPlacket" checked="" required>
+                  <input type="hidden" name="p5" id="cuff-oneButton" value="cuff-oneButton" required>
+                  <input type="hidden" name="p6" id="pocket-noPocket" value="pocket-noPocket" checked="">
+									<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+									<button type="submit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="/tailor/clianio/demo/assets/js/vendor/jquery.min.js"></script>
+    <script src="/tailor/clianio/demo/assets/js/vendor/jquery-migrate-3.0.0.min.js"></script>
+    <script src="/tailor/clianio/demo/assets/js/app.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+    <script src="/tailor/clianio/demo/assets/js/vscustom-carousel.min.js"></script>
+    <script src="/tailor/clianio/demo/assets/js/vsmenu.min.js"></script>
+    <script src="/tailor/clianio/demo/assets/js/ajaxmail.js"></script>
+    <script src="/tailor/clianio/demo/assets/js/main.js"></script>
+
+	<script src="/tailor/blouse-form/themes/js/jquery-3.3.1.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/jquery.validate.min.js"></script>
+	<script src="/tailor/blouse-form/ajax/js/bootstrap-datepicker.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/bootstrap.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/conditionize.flexible.jquery.min.js"></script>
+	<script src="/tailor/blouse-form/themes/js/main.js"></script>
+	<script src="/tailor/blouse-form/themes/js/switch.js"></script>
+	<script>
+		$("#files").change(function() {
+			filename = this.files[0].name
+			// console.log(filename);
+		});
+		function UploadFile() {
+			var reader = new FileReader();
+			var file = document.getElementById('attach').files[0];
+			reader.onload = function() {
+				document.getElementById('fileContent').value = reader.result;
+				document.getElementById('filename').value = file.name;
+				document.getElementById('wizard').submit();
+			}
+			reader.readAsDataURL(file);
+		}
+		$(document).ready(function() {
+			$('.conditional').conditionize();
+		});
+	</script>
+</body>
+</html>
+
