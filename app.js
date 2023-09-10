@@ -16,11 +16,7 @@ const morgan = require('morgan');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI =
-  'mongodb+srv://amongo2002:16143758@cluster0.dgyya.mongodb.net/test';
-//   `mongodb+srv://${process.env.MONGO_USER}:${
-//   process.env.MONGO_PASSWORD
-// }@cluster0.dgyya.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
+const MONGODB_URI = paste your mongodb url here
 
 const app = express();
 const store = new MongoDBStore({
@@ -95,4 +91,3 @@ mongoose
   });
 
   
-    // "start": "NODE_ENV=production MONGO_USER=amongo2002 MONGO_PASSWORD=16143758 MONGO_DEFAULT_DATABASE=test node app.js",
